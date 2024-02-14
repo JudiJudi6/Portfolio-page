@@ -13,6 +13,9 @@ export const theme = {
 
       blue1: "#2358a3",
       blue2: "#214083",
+
+      blue3: "#1e4676",
+      blue4: "#082b78",
     },
     screens: {
       xs: "320px",

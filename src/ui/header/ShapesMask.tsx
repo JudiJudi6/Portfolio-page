@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ShapesMask() {
@@ -25,7 +25,6 @@ export default function ShapesMask() {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="0 0 800 800"
         className="absolute w-10 h-10 top-40 left-32"
         id="element"
@@ -45,7 +44,6 @@ export default function ShapesMask() {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="0 0 800 800"
         className="absolute w-10 h-10 top-92 left-96"
         id="element"
@@ -65,7 +63,6 @@ export default function ShapesMask() {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="0 0 800 800"
         className="absolute w-10 h-10 top-20 right-10"
         id="element"
@@ -78,14 +75,13 @@ export default function ShapesMask() {
           stroke="#00ffff"
           fill="none"
           opacity="1"
-          transform="rotate(0, 400, 400)"
+          transform="rotate(20, 400, 400)"
         />
       </motion.svg>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="0 0 800 800"
         className="absolute w-10 h-10 top-40 right-32"
         id="element"
@@ -105,7 +101,6 @@ export default function ShapesMask() {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="0 0 800 800"
         className="absolute w-10 h-10 bottom-40 right-32"
         id="element"
@@ -116,7 +111,7 @@ export default function ShapesMask() {
           r="150"
           cx="400"
           cy="400"
-          stroke-width="40"
+          strokeWidth="40"
           stroke="#f06449"
           fill="none"
           opacity="1"
@@ -127,7 +122,6 @@ export default function ShapesMask() {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="0 0 800 800"
         className="absolute w-10 h-10 top-32 left-20"
         id="element"
@@ -138,7 +132,7 @@ export default function ShapesMask() {
           r="150"
           cx="400"
           cy="400"
-          stroke-width="40"
+          strokeWidth="40"
           stroke="#6b97ff"
           fill="none"
           opacity="1"
@@ -150,7 +144,6 @@ export default function ShapesMask() {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="0 0 800 800"
         className="absolute w-10 h-10 bottom-28 left-20"
         id="element"
@@ -162,7 +155,7 @@ export default function ShapesMask() {
           height="300"
           x="250"
           y="250"
-          stroke-width="40"
+          strokeWidth="40"
           stroke="#6b97ff"
           fill="none"
           opacity="1"
@@ -174,7 +167,6 @@ export default function ShapesMask() {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        xmlnsSvgjs="http://svgjs.dev/svgjs"
         viewBox="20 0 800 800"
         className="absolute w-10 h-10 bottom-16 right-80"
         id="element"
@@ -183,7 +175,7 @@ export default function ShapesMask() {
       >
         <path
           d="M400 226.795166015625L550.0000095849032 313.3975856398686V486.60242488835587L400 573.2048445125995L249.99999041509682 486.60242488835587V313.3975856398686L400 226.795166015625Z "
-          stroke-width="40"
+          strokeWidth="40"
           stroke="#00ffff"
           fill="none"
           opacity="1"
