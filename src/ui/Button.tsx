@@ -11,7 +11,7 @@ export default function Button({ children }: ButtonProps) {
 
   return (
     <motion.button
-      className="relative flex justify-center items-center w-[150px] h-[50px]"
+      className="relative flex justify-center items-center w-[150px] h-[50px] z-10"
       onHoverStart={() => setIsHover(true)}
       onHoverEnd={() => setIsHover(false)}
       onFocus={() => setIsHover(true)}
