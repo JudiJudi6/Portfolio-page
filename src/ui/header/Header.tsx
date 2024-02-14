@@ -7,17 +7,26 @@ import ShapesMask from "./ShapesMask";
 import WavyText from "../WavyText";
 import Loader from "./Loader";
 import { HiArrowLongRight } from "react-icons/hi2";
+import Modal from "../Modal";
+import About from "../About";
 
 export default function Header() {
   return (
-    <div className="relative bg-bg w-full h-screen overflow-hidden">
+    <div className="relative bg-bg w-full h-screen overflow-hidden" id="header">
       <div className="relative max-w-7xl h-full w-full  mx-auto ">
         <Navigation />
         <div className="w-full h-[calc(100vh-88px)] flex  justify-between items-center  px-8 xm:px-20  text-white max-w-7xl pb-[88px] gap-12">
           <div className="flex flex-col">
             <WavyText text="Łukasz Michnik" type="h1" delay={1} />
             <WavyText text="Front-end Developer" type="h3" delay={1} />
-            <Button>About Me</Button>
+            <Modal>
+              <Modal.Open opens="currency">
+                <Button>About Me</Button>
+              </Modal.Open>
+              <Modal.Window name="currency">
+                <About onCloseModal={undefined as never} />
+              </Modal.Window>
+            </Modal>
           </div>
           <div className="hidden lg:block rounded-full mr-32">
             <Image />

@@ -4,9 +4,10 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 interface ButtonProps {
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
-export default function Button({ children }: ButtonProps) {
+export default function Button({ children, onClick }: ButtonProps) {
   const [isHover, setIsHover] = useState<boolean>(false);
 
   return (
@@ -16,6 +17,7 @@ export default function Button({ children }: ButtonProps) {
       onHoverEnd={() => setIsHover(false)}
       onFocus={() => setIsHover(true)}
       onBlur={() => setIsHover(false)}
+      onClick={onClick}
     >
       <div className="absolute w-full h-full  bg-gradient-to-r from-red1 to-red2 overflow-hidden">
         <motion.div

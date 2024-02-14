@@ -6,6 +6,13 @@ export const theme = {
       bg: "#1c1d25",
       white: "#f0f0f0",
 
+      modalWhite: "#ececec",
+      modalSecWhite: "#e1e1e1",
+
+      modalDark: "#1c1d25",
+      modalSecDark: "#23242c",
+
+
       //gradients
 
       red1: "#ef4c3f",
@@ -19,6 +26,7 @@ export const theme = {
     },
     screens: {
       xs: "320px",
+      xss: "400px",
       xm: "440px",
       md600: "600px",
       md800: "800px",
