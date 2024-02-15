@@ -1,4 +1,3 @@
-import { HiXMark } from "react-icons/hi2";
 import Button from "./Button";
 import { useUserWidth } from "../hooks/useUserWidth";
 import { FaReact } from "react-icons/fa";
@@ -9,19 +8,61 @@ import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
 import { SiThreedotjs } from "react-icons/si";
 import { Link } from "react-router-dom";
+import FormInput from "./FormInput";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import TextArea from "./TextArea";
+import CloseButton from "./CloseButton";
+import emailjs from "@emailjs/browser";
 
 interface AboutProps {
   onCloseModal: () => void;
 }
 
 export default function About({ onCloseModal }: AboutProps) {
+  const [send, setSend] = useState<boolean>(true);
+  const [sendSuccess, setSendSuccess] = useState<boolean>(false);
+  const [sendError, setSendError] = useState<boolean>(false);
   const width = useUserWidth();
   const [technology, setTechnology] = useState<string>("");
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    getValues,
+    reset,
+  } = useForm<FieldValues>();
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setSend(true);
+    setTimeout(() => {
+      setSend(false);
+      setTimeout(() => setSendSuccess(true), 2000);
+    }, 2000);
+    reset();
+    // emailjs.init({
+    //   publicKey: "Xe7hZsEW-yAVY6NtF",
+    //   blockHeadless: true,
+    //   limitRate: {
+    //     // Set the limit rate for the application
+    //     id: "app",
+    //     // Allow 1 request per 10s
+    //     throttle: 10000,
+    //   },
+    // });
+    // emailjs.send("service_rfwg5bm", "template_3ng9u77", data).then(
+    //   (response) => {
+    //     console.log("SUCCESS!", response.status, response.text);
+    //   },
+    //   (error) => {
+    //     console.log("FAILED...", error);
+    //   }
+    // );
+  };
 
   return (
     <div className="flex flex-col md800:flex-row w-full h-full shadow-2xl">
       <motion.div
-        className="relative w-full bg-modalWhite p-6 h-1/2 md800:h-full overflow-y-auto flex flex-col justify-between items-center"
+        className="relative w-full bg-modalWhite p-6 md800:p-10 lg:p-16 h-1/2 md800:h-full overflow-y-auto flex flex-col justify-between items-center"
         animate={{ translateY: 0, opacity: 1 }}
         initial={{ translateY: "-150px", opacity: 0 }}
         transition={{ ease: "easeInOut", duration: 0.3 }}
@@ -33,19 +74,12 @@ export default function About({ onCloseModal }: AboutProps) {
           <div className="relative z-10">
             <div className="flex justify-between items-center">
               <h3 className="font-bold text-2xl">About me</h3>
-              {width < 800 && (
-                <button
-                  onClick={onCloseModal}
-                  className="p-2 rounded-full  text-2xl"
-                >
-                  <HiXMark />
-                </button>
-              )}
+              {width < 800 && <CloseButton onClick={onCloseModal} />}
             </div>
             <h3 className="font-light text-sm">Front-end Developer.</h3>
           </div>
           <div className="mt-3 ">
-            <p className="relative  z-10 text-xs xss:text-sm md600:text-base">
+            <p className="relative  z-10 text-xs xss:text-sm md600:text-base md800:text-sm">
               I am Łukasz Michnik, a{" "}
               <span className="text-red1">20 years old guy</span> who decided to
               become a <span className="text-red1">full stack developer</span>.
@@ -175,34 +209,84 @@ export default function About({ onCloseModal }: AboutProps) {
         )}
       </motion.div>
       <motion.div
-        className="relative w-full bg-modalDark p-6 text-white h-1/2 md800:h-full overflow-hidden"
+        className="relative w-full bg-modalDark p-6 md800:p-10 lg:p-16 pb-0 md800:pb-0 lg:pb-0 text-white h-1/2 md800:h-full  overflow-y-auto overflow-x-hidden"
         animate={{ translateY: 0, opacity: 1 }}
         initial={{ translateY: "150px", opacity: 0 }}
-        transition={{ ease: "easeInOut", duration: 0.3 }}
+        transition={{ ease: "easeInOut", duration: 0.3, delay: 0.2 }}
       >
-        <p className="absolute text-modalSecDark font-bold bottom-0 right-0 text-9xl z-0">
+        <p className="absolute text-modalSecDark font-bold bottom-10 right-0 text-9xl z-0">
           Contact
         </p>
         <div className="relative z-10">
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-2xl">Let's talk.</h3>
-            {width > 800 && (
-              <button
-                onClick={onCloseModal}
-                className="p-2 rounded-full  text-2xl"
-              >
-                <HiXMark />
-              </button>
-            )}
+            {width > 800 && <CloseButton onClick={onCloseModal} />}
           </div>
-          <p className="relative mt-5 z-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, aut
-            asperiores aliquid consequatur accusamus eveniet dicta vero eum
-            natus corrupti, quaerat numquam, obcaecati odit! Quo quae
-            reprehenderit magni delectus et?
-          </p>
-          <Button>Send message</Button>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col justify-center items-start gap-4 md800:gap-8 py-4"
+          >
+            <FormInput
+              id="name"
+              placeholder="Name *"
+              inputType="text"
+              error={errors?.name?.message}
+              register={register}
+            />
+            <FormInput
+              id="email"
+              placeholder="E-mail *"
+              inputType="email"
+              error={errors?.email?.message}
+              register={register}
+              validateFunction={() => {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(getValues().email))
+                  return "Incorrect e-mail";
+                else return true;
+              }}
+            />
+            <TextArea id="message" register={register} />
+            <Button>Send message</Button>
+          </form>
         </div>
+
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-red1 to-red2 z-50 -translate-x-full"
+          animate={send ? { translateX: 0 } : { translateX: "-105%" }}
+          initial={{ translateX: "-105%" }}
+          transition={{ ease: "easeInOut", duration: 0.4 }}
+        ></motion.div>
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue1 to-blue2 z-50 flex justify-center items-center"
+          animate={send ? { translateX: 0 } : { translateX: "-105%" }}
+          initial={{ translateX: "-105%" }}
+          transition={{ ease: "easeInOut", duration: 0.6 }}
+        >
+          <div className="bars"></div>
+        </motion.div>
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-[#06d6a0] z-50 flex justify-center items-center "
+          animate={sendSuccess ? { translateX: 0 } : { translateX: "-105%" }}
+          initial={{ translateX: "-105%" }}
+          transition={{ ease: "easeInOut", duration: 0.6 }}
+        >
+          <div className="flex flex-col justify-center items-start p-8 text-lg sm:text-2xl font-semibold gap-3">
+            <p>Thank You!</p>
+            <p>Your message has been sent...</p>
+          </div>
+        </motion.div>
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-red-400 z-50 flex justify-center items-center "
+          animate={sendError ? { translateX: 0 } : { translateX: "-105%" }}
+          initial={{ translateX: "-105%" }}
+          transition={{ ease: "easeInOut", duration: 0.6 }}
+        >
+          <div className="flex flex-col justify-center items-start p-8 text-lg sm:text-2xl font-semibold gap-3">
+            <p>Error!</p>
+            <p>There is some problems, please try later...</p>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
