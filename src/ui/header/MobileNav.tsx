@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa6";
 
 export default function MobileNav() {
   const [open, setOpen] = useState<boolean>(false);
-  const time = !open ? 0.45 : 0.15;
+  const time = !open ? 0.8 : 0.4;
 
   return (
     <div className="relative p-4 w-full">
@@ -46,7 +46,7 @@ export default function MobileNav() {
       ></motion.div>
       <motion.div
         animate={open ? { translateX: 0 } : { translateX: "-100%" }}
-        transition={{ ease: "easeInOut" }}
+        transition={{ ease: "easeInOut", duration: 0.6 }}
         className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-r from-blue1 to-blue2 -translate-x-full z-20 flex flex-col justify-center items-center"
       >
         <div className="flex flex-col justify-evenly items-center h-1/2 w-full">
@@ -55,7 +55,7 @@ export default function MobileNav() {
             onClick={() => setOpen(false)}
             className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
               open
-                ? "translate-y-0  duration-300 delay-100 opacity-100"
+                ? "translate-y-0  duration-300 delay-[0.3s] opacity-100"
                 : "translate-y-5 opacity-0"
             } `}
           >
@@ -66,7 +66,7 @@ export default function MobileNav() {
             onClick={() => setOpen(false)}
             className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
               open
-                ? "translate-y-0  duration-300 delay-150 opacity-100"
+                ? "translate-y-0  duration-300 delay-[0.4s] opacity-100"
                 : "translate-y-5 opacity-0"
             } `}
           >
@@ -77,7 +77,7 @@ export default function MobileNav() {
             onClick={() => setOpen(false)}
             className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
               open
-                ? "translate-y-0  duration-300 delay-200 opacity-100"
+                ? "translate-y-0  duration-300 delay-[0.5s] opacity-100"
                 : "translate-y-5 opacity-0"
             } `}
           >
@@ -88,7 +88,7 @@ export default function MobileNav() {
             onClick={() => setOpen(false)}
             className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
               open
-                ? "translate-y-0  duration-300 delay-[0.25s] opacity-100"
+                ? "translate-y-0  duration-300 delay-[0.6s] opacity-100"
                 : "translate-y-5 opacity-0"
             } `}
           >
@@ -100,7 +100,7 @@ export default function MobileNav() {
             to=""
             onClick={() => setOpen(false)}
             className={`text-3xl text-white  p-2 hover:text-red1 transition-all duration-300 ${
-              open ? " duration-300 delay-[0.25s] opacity-100" : "opacity-0"
+              open ? " duration-300 delay-[0.7s] opacity-100" : "opacity-0"
             } `}
           >
             <FaLinkedinIn />
@@ -109,7 +109,7 @@ export default function MobileNav() {
             to=""
             onClick={() => setOpen(false)}
             className={`text-3xl text-white p-2 hover:text-red1 transition-all duration-300 ${
-              open ? "  duration-300 delay-[0.25s] opacity-100" : " opacity-0"
+              open ? "  duration-300 delay-[0.7s] opacity-100" : " opacity-0"
             } `}
           >
             <FaGithub />
