@@ -4,10 +4,11 @@ import { useUserWidth } from "../hooks/useUserWidth";
 import { FaReact } from "react-icons/fa";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { IoLogoJavascript } from "react-icons/io5";
+import { BiLogoTypescript } from "react-icons/bi";
 import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
 import { SiThreedotjs } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 interface AboutProps {
   onCloseModal: () => void;
@@ -19,7 +20,12 @@ export default function About({ onCloseModal }: AboutProps) {
 
   return (
     <div className="flex flex-col md800:flex-row w-full h-full shadow-2xl">
-      <div className="relative w-full bg-modalWhite p-6 h-1/2 md800:h-full overflow-y-auto flex flex-col justify-between items-center">
+      <motion.div
+        className="relative w-full bg-modalWhite p-6 h-1/2 md800:h-full overflow-y-auto flex flex-col justify-between items-center"
+        animate={{ translateY: 0, opacity: 1 }}
+        initial={{ translateY: "-150px", opacity: 0 }}
+        transition={{ ease: "easeInOut", duration: 0.3 }}
+      >
         <div>
           <p className="absolute text-modalSecWhite font-bold t-32 right-0 text-9xl">
             About
@@ -44,8 +50,8 @@ export default function About({ onCloseModal }: AboutProps) {
               <span className="text-red1">20 years old guy</span> who decided to
               become a <span className="text-red1">full stack developer</span>.
               I am currently learning web technologies{" "}
-              <span className="text-red1">for almost 2 years.</span> I am also a{" "}
-              <span className="text-red1">student</span> at Rzeszów University
+              <span className="text-red1">for almost 1.5 year.</span> I am also
+              a <span className="text-red1">student</span> at Rzeszów University
               of Technology in my second year. <br />
               In my free time, I like to build new projects and develop existing
               ones, not necessarily finish... but someday I will{" "}
@@ -61,106 +67,119 @@ export default function About({ onCloseModal }: AboutProps) {
           </div>
         </div>
         {width > 800 && (
-          <div className="flex h-10  w-full justify-evenly items-start ">
-            <motion.div
-              className="flex flex-col justify-center w-[60px] items-center hover:text-cyan-500 transition-colors duration-300"
-              onHoverStart={() => setTechnology("react")}
-              onHoverEnd={() => setTechnology("")}
+          <div className="w-full flex flex-col gap-4">
+            <div className="flex h-10  w-full justify-evenly items-start ">
+              <motion.div
+                className="flex flex-col justify-center w-[60px] items-center hover:text-cyan-500 transition-colors duration-300"
+                onHoverStart={() => setTechnology("react")}
+                onHoverEnd={() => setTechnology("")}
+              >
+                <span className="text-3xl">
+                  <FaReact />
+                </span>
+                {technology === "react" && (
+                  <motion.p
+                    className="font-semibold text-xs"
+                    animate={{ opacity: 1, translateY: 0 }}
+                    initial={{ opacity: 0, translateY: "10px" }}
+                    transition={{ ease: "easeInOut", duration: 0.3 }}
+                  >
+                    React
+                  </motion.p>
+                )}
+              </motion.div>
+              <motion.div
+                className="flex flex-col justify-center w-[60px] items-center hover:text-[#2d79c7] transition-colors duration-300"
+                onHoverStart={() => setTechnology("typescript")}
+                onHoverEnd={() => setTechnology("")}
+              >
+                <span className="text-3xl">
+                  <BiLogoTypescript />
+                </span>
+                {technology === "typescript" && (
+                  <motion.p
+                    className="font-semibold text-xs"
+                    animate={{ opacity: 1, translateY: 0 }}
+                    initial={{ opacity: 0, translateY: "10px" }}
+                    transition={{ ease: "easeInOut", duration: 0.3 }}
+                  >
+                    TypeScript
+                  </motion.p>
+                )}
+              </motion.div>
+              <motion.div
+                className="flex flex-col justify-center w-[60px] items-center hover:text-[#07b5d5] transition-colors duration-300"
+                onHoverStart={() => setTechnology("tailwind")}
+                onHoverEnd={() => setTechnology("")}
+              >
+                <span className="text-3xl">
+                  <SiTailwindcss />
+                </span>
+                {technology === "tailwind" && (
+                  <motion.p
+                    className="font-semibold text-xs"
+                    animate={{ opacity: 1, translateY: 0 }}
+                    initial={{ opacity: 0, translateY: "10px" }}
+                    transition={{ ease: "easeInOut", duration: 0.3 }}
+                  >
+                    Tailwind
+                  </motion.p>
+                )}
+              </motion.div>
+              <motion.div
+                className="flex flex-col justify-center w-[60px] items-center hover:text-[#cd6799] transition-colors duration-300"
+                onHoverStart={() => setTechnology("sass")}
+                onHoverEnd={() => setTechnology("")}
+              >
+                <span className="text-3xl">
+                  <SiSass />
+                </span>
+                {technology === "sass" && (
+                  <motion.p
+                    className="font-semibold text-xs"
+                    animate={{ opacity: 1, translateY: 0 }}
+                    initial={{ opacity: 0, translateY: "10px" }}
+                    transition={{ ease: "easeInOut", duration: 0.3 }}
+                  >
+                    Sass
+                  </motion.p>
+                )}
+              </motion.div>
+              <motion.div
+                className="flex flex-col justify-center w-[60px] items-center hover:text-[#333333] transition-colors duration-300"
+                onHoverStart={() => setTechnology("three")}
+                onHoverEnd={() => setTechnology("")}
+              >
+                <span className="text-3xl">
+                  <SiThreedotjs />
+                </span>
+                {technology === "three" && (
+                  <motion.p
+                    className="font-semibold text-xs"
+                    animate={{ opacity: 1, translateY: 0 }}
+                    initial={{ opacity: 0, translateY: "10px" }}
+                    transition={{ ease: "easeInOut", duration: 0.3 }}
+                  >
+                    Three.js
+                  </motion.p>
+                )}
+              </motion.div>
+            </div>
+            <Link
+              to=""
+              className="text-xs self-end hover:text-red1 transition-colors duration-300 p-2"
             >
-              <span className="text-3xl">
-                <FaReact />
-              </span>
-              {technology === "react" && (
-                <motion.p
-                  className="font-semibold text-xs"
-                  animate={{ opacity: 1, translateY: 0 }}
-                  initial={{ opacity: 0, translateY: "10px" }}
-                  transition={{ ease: "easeInOut", duration: 0.3 }}
-                >
-                  React
-                </motion.p>
-              )}
-            </motion.div>
-            <motion.div
-              className="flex flex-col justify-center w-[60px] items-center hover:text-yellow-500 transition-colors duration-300"
-              onHoverStart={() => setTechnology("javascript")}
-              onHoverEnd={() => setTechnology("")}
-            >
-              <span className="text-3xl">
-                <IoLogoJavascript />
-              </span>
-              {technology === "javascript" && (
-                <motion.p
-                  className="font-semibold text-xs"
-                  animate={{ opacity: 1, translateY: 0 }}
-                  initial={{ opacity: 0, translateY: "10px" }}
-                  transition={{ ease: "easeInOut", duration: 0.3 }}
-                >
-                  JavaScript
-                </motion.p>
-              )}
-            </motion.div>
-            <motion.div
-              className="flex flex-col justify-center w-[60px] items-center hover:text-[#07b5d5] transition-colors duration-300"
-              onHoverStart={() => setTechnology("tailwind")}
-              onHoverEnd={() => setTechnology("")}
-            >
-              <span className="text-3xl">
-                <SiTailwindcss />
-              </span>
-              {technology === "tailwind" && (
-                <motion.p
-                  className="font-semibold text-xs"
-                  animate={{ opacity: 1, translateY: 0 }}
-                  initial={{ opacity: 0, translateY: "10px" }}
-                  transition={{ ease: "easeInOut", duration: 0.3 }}
-                >
-                  Tailwind
-                </motion.p>
-              )}
-            </motion.div>
-            <motion.div
-              className="flex flex-col justify-center w-[60px] items-center hover:text-[#cd6799] transition-colors duration-300"
-              onHoverStart={() => setTechnology("sass")}
-              onHoverEnd={() => setTechnology("")}
-            >
-              <span className="text-3xl">
-                <SiSass />
-              </span>
-              {technology === "sass" && (
-                <motion.p
-                  className="font-semibold text-xs"
-                  animate={{ opacity: 1, translateY: 0 }}
-                  initial={{ opacity: 0, translateY: "10px" }}
-                  transition={{ ease: "easeInOut", duration: 0.3 }}
-                >
-                  Sass
-                </motion.p>
-              )}
-            </motion.div>
-            <motion.div
-              className="flex flex-col justify-center w-[60px] items-center hover:text-[#333333] transition-colors duration-300"
-              onHoverStart={() => setTechnology("three")}
-              onHoverEnd={() => setTechnology("")}
-            >
-              <span className="text-3xl">
-                <SiThreedotjs />
-              </span>
-              {technology === "three" && (
-                <motion.p
-                  className="font-semibold text-xs"
-                  animate={{ opacity: 1, translateY: 0 }}
-                  initial={{ opacity: 0, translateY: "10px" }}
-                  transition={{ ease: "easeInOut", duration: 0.3 }}
-                >
-                  Three.js
-                </motion.p>
-              )}
-            </motion.div>
+              Of course, that's not all skills...
+            </Link>
           </div>
         )}
-      </div>
-      <div className="relative w-full bg-modalDark p-6 text-white h-1/2 md800:h-full overflow-hidden">
+      </motion.div>
+      <motion.div
+        className="relative w-full bg-modalDark p-6 text-white h-1/2 md800:h-full overflow-hidden"
+        animate={{ translateY: 0, opacity: 1 }}
+        initial={{ translateY: "150px", opacity: 0 }}
+        transition={{ ease: "easeInOut", duration: 0.3 }}
+      >
         <p className="absolute text-modalSecDark font-bold bottom-0 right-0 text-9xl z-0">
           Contact
         </p>
@@ -184,7 +203,7 @@ export default function About({ onCloseModal }: AboutProps) {
           </p>
           <Button>Send message</Button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
