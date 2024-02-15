@@ -54,7 +54,6 @@ function Window({ children, name }: WindowProps) {
   const { openName, close } = useContext(ModalContext)!;
   const header = document.querySelector("#header")!;
 
-  console.log(header);
   if (name !== openName) return null;
 
   return createPortal(
