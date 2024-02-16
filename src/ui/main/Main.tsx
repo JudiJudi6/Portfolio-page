@@ -1,4 +1,3 @@
-import React from "react";
 import SectionTitle from "../SectionTitle";
 import MainItem from "./MainItem";
 import SkillItem from "./SkillItem";
@@ -14,6 +13,7 @@ import { SiJest } from "react-icons/si";
 import { SiSupabase } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
 
 export default function Main() {
   return (
@@ -108,6 +108,15 @@ export default function Main() {
             color="#77fb66"
           />
         </div>
+        <SkillItem
+          skill="Where did I learn from?"
+          libs=" I spent my free time learning from courses on Udemy and Youtube
+            materials. I also built my own projects to learn, how to use the
+            knowledge from them in practice"
+          icon={<FaPencilAlt />}
+          color="#0011ff"
+          last={true}
+        />
       </section>
     </main>
   );
