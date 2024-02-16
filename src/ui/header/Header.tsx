@@ -9,6 +9,7 @@ import Loader from "./Loader";
 import { HiArrowLongRight } from "react-icons/hi2";
 import Modal from "../Modal";
 import About from "../About";
+import ContactButtons from "./ContactButtons";
 
 export default function Header() {
   return (
@@ -17,8 +18,8 @@ export default function Header() {
         <Navigation />
         <div className="w-full h-[calc(100vh-88px)] flex  justify-between items-center  px-8 xm:px-20  text-white max-w-7xl pb-[88px] gap-12">
           <div className="flex flex-col">
-            <WavyText text="Łukasz Michnik" type="h1" delay={1} />
-            <WavyText text="Front-end Developer" type="h3" delay={1} />
+            <WavyText text="Łukasz Michnik" type="h1" delay={1.6} />
+            <WavyText text="Front-end Developer" type="h3" delay={1.6} />
             <Modal>
               <Modal.Open opens="currency">
                 <Button>About Me</Button>
@@ -28,7 +29,7 @@ export default function Header() {
               </Modal.Window>
             </Modal>
           </div>
-          <div className="hidden lg:block rounded-full mr-32">
+          <div className="hidden slg:block rounded-full mr-32">
             <Image />
           </div>
         </div>
@@ -36,7 +37,6 @@ export default function Header() {
       </div>
       <motion.button
         className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex flex-col justify-center items-center text-white text-xs p-1"
-        // animate={{opacity: 1}}
         initial={{ translateY: "0px", translateX: "-50%" }}
         whileHover={{ translateY: "-16px", translateX: "-50%" }}
         transition={{ ease: "easeInOut", duration: 0.2 }}
@@ -53,6 +53,7 @@ export default function Header() {
         </span>
       </motion.button>
       <Loader />
+      <ContactButtons />
     </div>
   );
 }

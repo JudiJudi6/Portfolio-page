@@ -12,7 +12,6 @@ export const theme = {
       modalDark: "#1c1d25",
       modalSecDark: "#23242c",
 
-
       //gradients
 
       red1: "#ef4c3f",
@@ -30,6 +29,7 @@ export const theme = {
       xm: "440px",
       md600: "600px",
       md800: "800px",
+      slg: "1170px",
     },
     gridTemplateRows: {
       layout: " auto",

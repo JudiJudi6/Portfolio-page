@@ -10,6 +10,13 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-/* #root {
-  width: 100%;
-} */
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ef4c3f;
+  width: 5px;
+  border-radius: 8px;
+}

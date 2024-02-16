@@ -13,13 +13,14 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextArea from "./TextArea";
 import CloseButton from "./CloseButton";
 import emailjs from "@emailjs/browser";
+import Spinner from "./Spinner";
 
 interface AboutProps {
   onCloseModal: () => void;
 }
 
 export default function About({ onCloseModal }: AboutProps) {
-  const [send, setSend] = useState<boolean>(true);
+  const [send, setSend] = useState<boolean>(false);
   const [sendSuccess, setSendSuccess] = useState<boolean>(false);
   const [sendError, setSendError] = useState<boolean>(false);
   const width = useUserWidth();
@@ -36,27 +37,32 @@ export default function About({ onCloseModal }: AboutProps) {
     setSend(true);
     setTimeout(() => {
       setSend(false);
-      setTimeout(() => setSendSuccess(true), 2000);
     }, 2000);
     reset();
-    // emailjs.init({
-    //   publicKey: "Xe7hZsEW-yAVY6NtF",
-    //   blockHeadless: true,
-    //   limitRate: {
-    //     // Set the limit rate for the application
-    //     id: "app",
-    //     // Allow 1 request per 10s
-    //     throttle: 10000,
-    //   },
-    // });
-    // emailjs.send("service_rfwg5bm", "template_3ng9u77", data).then(
-    //   (response) => {
-    //     console.log("SUCCESS!", response.status, response.text);
-    //   },
-    //   (error) => {
-    //     console.log("FAILED...", error);
-    //   }
-    // );
+    emailjs.init({
+      publicKey: "Xe7hZsEW-yAVY6NtF",
+      blockHeadless: true,
+      limitRate: {
+        id: "app",
+        throttle: 10000,
+      },
+    });
+    emailjs.send("service_rfwg5bm", "template_3ng9u77", data).then(
+      () => {
+        setSendSuccess(true);
+        setTimeout(() => {
+          setSend(false);
+          setSendSuccess(false);
+        }, 3000);
+      },
+      () => {
+        setSendError(true);
+        setTimeout(() => {
+          setSend(false);
+          setSendError(false);
+        }, 3000);
+      }
+    );
   };
 
   return (
@@ -79,7 +85,7 @@ export default function About({ onCloseModal }: AboutProps) {
             <h3 className="font-light text-sm">Front-end Developer.</h3>
           </div>
           <div className="mt-3 ">
-            <p className="relative  z-10 text-xs xss:text-sm md600:text-base md800:text-sm">
+            <p className="relative  z-10 text-sm xss:text-sm md600:text-[15px] lg:text-base ">
               I am Łukasz Michnik, a{" "}
               <span className="text-red1">20 years old guy</span> who decided to
               become a <span className="text-red1">full stack developer</span>.
@@ -263,7 +269,7 @@ export default function About({ onCloseModal }: AboutProps) {
           initial={{ translateX: "-105%" }}
           transition={{ ease: "easeInOut", duration: 0.6 }}
         >
-          <div className="bars"></div>
+          <Spinner />
         </motion.div>
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-[#06d6a0] z-50 flex justify-center items-center "

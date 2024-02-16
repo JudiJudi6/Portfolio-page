@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Spinner from "../Spinner";
 
 export default function Loader() {
   return (
@@ -12,14 +12,16 @@ export default function Loader() {
         },
       }}
       initial={{ opacity: 1 }}
-      transition={{ duration: 1.2, delay: 0.4 }}
+      transition={{ duration: 1.2, delay: 1.6 }}
     >
       <motion.div
-        className="h-full w-full bg-gradient-to-r from-blue3 to-blue4"
+        className="h-full w-full bg-gradient-to-r from-blue3 to-blue4 flex justify-center items-center"
         animate={{ translateX: "100%" }}
         initial={{ translateX: 0 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-      ></motion.div>
+        transition={{ duration: 0.4, delay: 1.2 }}
+      >
+        <Spinner />
+      </motion.div>
     </motion.div>
   );
 }

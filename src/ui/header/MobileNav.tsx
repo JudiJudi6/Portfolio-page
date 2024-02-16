@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -7,6 +7,18 @@ import { FaGithub } from "react-icons/fa6";
 export default function MobileNav() {
   const [open, setOpen] = useState<boolean>(false);
   const time = !open ? 0.8 : 0.4;
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
 
   return (
     <div className="relative p-4 w-full">

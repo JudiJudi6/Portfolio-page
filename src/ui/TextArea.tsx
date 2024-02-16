@@ -42,11 +42,13 @@ export default function TextArea({ id, register }: TextAreaProps) {
         <motion.div
           className={`absolute bottom-0 left-0  w-full h-[2px] bg-gradient-to-r from-blue1 to-blue2 scale-0 origin-left`}
           animate={hover || focus ? { scaleX: 1 } : { scaleX: 0 }}
+          initial={{ scaleX: 0 }}
           transition={{ ease: "easeInOut", duration: 0.4 }}
         ></motion.div>
         <motion.div
           className={`absolute bottom-0 left-0  w-full h-[2px] bg-gradient-to-r from-red1 to-red2 scale-0 origin-left`}
           animate={hover || focus ? { scaleX: 1 } : { scaleX: 0 }}
+          initial={{ scaleX: 0 }}
           transition={{ ease: "easeInOut", duration: 0.6 }}
         ></motion.div>
       </div>
