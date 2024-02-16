@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navigation from "./Navigation";
 import Button from "../Button";
@@ -8,7 +7,7 @@ import WavyText from "../WavyText";
 import Loader from "./Loader";
 import { HiArrowLongRight } from "react-icons/hi2";
 import Modal from "../Modal";
-import About from "../About";
+import About from "./About";
 import ContactButtons from "./ContactButtons";
 
 export default function Header() {

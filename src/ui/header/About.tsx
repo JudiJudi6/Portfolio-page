@@ -1,5 +1,5 @@
-import Button from "./Button";
-import { useUserWidth } from "../hooks/useUserWidth";
+import Button from "../Button";
+import { useUserWidth } from "../../hooks/useUserWidth";
 import { FaReact } from "react-icons/fa";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -8,12 +8,12 @@ import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
 import { SiThreedotjs } from "react-icons/si";
 import { Link } from "react-router-dom";
-import FormInput from "./FormInput";
+import FormInput from "../FormInput";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import TextArea from "./TextArea";
-import CloseButton from "./CloseButton";
+import TextArea from "../TextArea";
+import CloseButton from "../CloseButton";
 import emailjs from "@emailjs/browser";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 interface AboutProps {
   onCloseModal: () => void;

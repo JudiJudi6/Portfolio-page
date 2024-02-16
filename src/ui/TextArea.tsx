@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FieldError,
-  FieldErrorsImpl,
-  FieldValues,
-  Merge,
-  UseFormRegister,
-} from "react-hook-form";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
 interface TextAreaProps {
   register: UseFormRegister<FieldValues>;
   id: string;
 }
 
-export default function TextArea({ id, register }: TextAreaProps) {
+export default function TextArea({ register }: TextAreaProps) {
   const [focus, setFocus] = useState<boolean>(false);
   const [hover, setHover] = useState<boolean>(false);
 

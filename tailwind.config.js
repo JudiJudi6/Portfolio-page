@@ -29,12 +29,15 @@ export const theme = {
       xm: "440px",
       md600: "600px",
       md800: "800px",
+      md900: "900px",
       slg: "1170px",
     },
     gridTemplateRows: {
       layout: " auto",
     },
-    backgroundImage: { rightArrow: 'url("/arrow.svg")' },
+    backgroundImage: {
+      rightArrow: 'url("/arrow.svg")',
+    },
   },
 };
 export const plugins = [];

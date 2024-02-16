@@ -22,6 +22,7 @@ export default function Button({ children, onClick }: ButtonProps) {
       <div className="absolute w-full h-full  bg-gradient-to-r from-red1 to-red2 overflow-hidden">
         <motion.div
           animate={isHover ? { translateX: "100%" } : { translateX: "-100%" }}
+          initial={{ translateX: "-100%" }}
           transition={{ ease: "easeInOut" }}
           className="absolute w-full h-full bg-gradient-to-r from-blue1 to-blue2 -translate-x-full"
         ></motion.div>
@@ -29,6 +30,7 @@ export default function Button({ children, onClick }: ButtonProps) {
       <p className="relative z-10 tracking-wide font-semibold">{children}</p>
       <motion.div
         animate={isHover ? { translateX: "30%" } : { translateX: "0%" }}
+        initial={{ translateX: "0%" }}
         className="absolute -right-4 text-3xl"
       >
         <HiArrowLongRight />
