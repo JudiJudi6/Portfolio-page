@@ -68,7 +68,7 @@ export default function Footer() {
       </motion.div>
       <motion.p
         ref={refTwo}
-        className="italic text-xs text-white opacity-60 text-center"
+        className="italic text-xs md600:text-sm text-white opacity-60 text-center"
         animate={inViewTwo && { translateX: 0, opacity: 0.6 }}
         initial={{ translateX: "-100px", opacity: 0 }}
         transition={{ ease: "easeInOut", duration: 0.3, delay: 0.2 }}
