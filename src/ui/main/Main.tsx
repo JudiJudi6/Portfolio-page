@@ -33,10 +33,24 @@ export default function Main() {
           />
           <MainItem
             img="/bitchain/bitchain4.jpg"
-            link="/bitchain"
-            title="Project Bitchain"
+            link="/wallet-wise"
+            title="Wallet Wise"
             type="right"
-            desc="Copy of a cryptocurrency exchange containing all the mechanisms of a real exchange"
+            desc="Wallet simulator that allows to exchange and transfer funds between users"
+          />
+          <MainItem
+            img="/bitchain/bitchain4.jpg"
+            link="/three-animation"
+            title="Interactive Robots Animation"
+            type="left"
+            desc="Interactive animation in Three.js allowing users to fully control it"
+          />
+          <MainItem
+            img="/bitchain/bitchain4.jpg"
+            link="/useless-tools"
+            title="Useless Tools"
+            type="right"
+            desc="Project containing random tools, mainly solving problems related to tasks at the university"
           />
         </div>
       </section>

@@ -4,13 +4,26 @@ import Modal from "../Modal";
 import About from "./About";
 import { motion } from "framer-motion";
 
-export default function DeskNav() {
+interface DeskNavProps {
+  type: string;
+}
+
+export default function DeskNav({ type }: DeskNavProps) {
   const [hover, setHover] = useState<boolean>(false);
 
   return (
     <div className="flex justify-end items-center gap-4 p-6">
-      <LinkItem to="/#projects" title="Projects" type="hash" />
-      <LinkItem to="/#skills" title="Skills" type="hash" />
+      {type === "main" ? (
+        <>
+          <LinkItem to="/#projects" title="Projects" type="hash" />
+          <LinkItem to="/#skills" title="Skills" type="hash" />
+        </>
+      ) : (
+        <>
+          <LinkItem to="/" title="Back To Home" type="hash" />
+          <LinkItem to="/#projects" title="All Projects" type="hash" />
+        </>
+      )}
       <Modal>
         <Modal.Open opens="about">
           <motion.button
@@ -20,7 +33,7 @@ export default function DeskNav() {
             onFocus={() => setHover(true)}
             onBlur={() => setHover(false)}
           >
-            <p className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+            <p className="opacity-80 hover:opacity-100 transition-opacity duration-300">
               Contact
             </p>
             <motion.div

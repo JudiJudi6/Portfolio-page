@@ -1,9 +1,12 @@
-import React from "react";
 import DeskNav from "./DeskNav";
 import MobileNav from "./MobileNav";
 import { motion } from "framer-motion";
 
-export default function Navigation() {
+interface NavigationProps {
+  type?: "main" | "project";
+}
+
+export default function Navigation({ type = "main" }: NavigationProps) {
   return (
     <motion.div
       className="relative z-50 w-full"
@@ -12,7 +15,7 @@ export default function Navigation() {
       transition={{ ease: "easeInOut", duration: 0.4, delay: 2 }}
     >
       <div className="hidden sm:block w-full">
-        <DeskNav />
+        <DeskNav type={type} />
       </div>
       <div className="sm:hidden w-full">
         <MobileNav />

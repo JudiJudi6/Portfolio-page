@@ -6,6 +6,9 @@ import Root from "./Root.tsx";
 import PageNotFound from "./pages/PageNotFound.tsx";
 import Bitchain from "./pages/Bitchain.tsx";
 import Homepage from "./pages/Homepage.tsx";
+import WalletWise from "./pages/WalletWise.tsx";
+import ThreeAnimation from "./pages/ThreeAnimation.tsx";
+import UselessTools from "./pages/UselessTools.tsx";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +17,10 @@ const router = createBrowserRouter([
     errorElement: <PageNotFound />,
     children: [
       { path: "/", element: <Homepage /> },
-      { path: "project", element: <Bitchain /> },
+      { path: "bitchain", element: <Bitchain /> },
+      { path: "wallet-wise", element: <WalletWise /> },
+      { path: "three-animation", element: <ThreeAnimation /> },
+      { path: "useless-tools", element: <UselessTools /> },
     ],
   },
 ]);

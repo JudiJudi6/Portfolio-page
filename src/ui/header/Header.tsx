@@ -17,8 +17,8 @@ export default function Header() {
         <Navigation />
         <div className="w-full h-[calc(100vh-88px)] flex  justify-between items-center  px-8 xm:px-20  text-white max-w-7xl pb-[88px] gap-12">
           <div className="flex flex-col">
-            <WavyText text="Łukasz Michnik" type="h1" delay={1.6} />
-            <WavyText text="Front-end Developer" type="h3" delay={1.6} />
+            <WavyText text="Łukasz Michnik" type="h1" delay={2} />
+            <WavyText text="Front-end Developer" type="h3" delay={2} />
             <Modal>
               <Modal.Open opens="about">
                 <Button>About Me</Button>

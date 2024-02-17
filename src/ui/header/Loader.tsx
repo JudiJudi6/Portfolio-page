@@ -1,10 +1,30 @@
 import { motion } from "framer-motion";
 import Spinner from "../Spinner";
+import { useEffect, useState } from "react";
 
 export default function Loader() {
+  const [timer, setTimer] = useState<boolean>(true);
+
+  useEffect(function () {
+    setTimeout(() => {
+      setTimer(false);
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
+    if (timer) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [timer]);
   return (
     <motion.div
-      className="absolute top-0 left-0 w-full h-full bg-bg z-50 overflow-hidden "
+      className="fixed top-0 left-0 w-full h-full bg-bg z-[60] overflow-hidden "
       animate={{
         opacity: 0,
         transitionEnd: {
