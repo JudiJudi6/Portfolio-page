@@ -1,4 +1,3 @@
-import { HashLink } from "react-router-hash-link";
 import LinkItem from "./LinkItem";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -9,8 +8,6 @@ export default function Footer() {
   const inViewOne = useInView(refOne);
   const refTwo = useRef(null);
   const inViewTwo = useInView(refTwo);
-
-  const MotionHash = motion(HashLink);
 
   return (
     <div className="relative h-[30vh] bg-bg mt-20 flex justify-center items-center flex-col gap-5 overflow-hidden">

@@ -4,7 +4,8 @@ export const theme = {
   extend: {
     colors: {
       bg: "#1c1d25",
-      white: "#f0f0f0",
+      white: "#ececec",
+      pureWhite: "#ffffff",
 
       modalWhite: "#ececec",
       modalSecWhite: "#e1e1e1",

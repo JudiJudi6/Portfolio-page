@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   font-family: "Montserrat", sans-serif;
+  background-color: #ececec;
 }
 
 ::-webkit-scrollbar {

@@ -29,7 +29,7 @@ export default function Main() {
             link="/bitchain"
             title="Project Bitchain"
             type="left"
-            desc="Copy of a cryptocurrency exchange containing all the mechanisms of a real exchange"
+            desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
           />
           <MainItem
             img="/bitchain/bitchain4.jpg"
