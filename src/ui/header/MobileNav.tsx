@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
+import { HashLink } from "react-router-hash-link";
+import Modal from "../Modal";
+import About from "./About";
 
 export default function MobileNav() {
   const [open, setOpen] = useState<boolean>(false);
@@ -62,8 +65,9 @@ export default function MobileNav() {
         className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-r from-blue1 to-blue2 -translate-x-full z-20 flex flex-col justify-center items-center"
       >
         <div className="flex flex-col justify-evenly items-center h-1/2 w-full">
-          <Link
-            to=""
+          <HashLink
+            smooth
+            to="/#"
             onClick={() => setOpen(false)}
             className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
               open
@@ -72,9 +76,10 @@ export default function MobileNav() {
             } `}
           >
             Home
-          </Link>
-          <Link
-            to=""
+          </HashLink>
+          <HashLink
+            smooth
+            to="/#projects"
             onClick={() => setOpen(false)}
             className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
               open
@@ -83,9 +88,10 @@ export default function MobileNav() {
             } `}
           >
             Projects
-          </Link>
-          <Link
-            to=""
+          </HashLink>
+          <HashLink
+            to="/#skills"
+            smooth
             onClick={() => setOpen(false)}
             className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
               open
@@ -94,22 +100,30 @@ export default function MobileNav() {
             } `}
           >
             Skills
-          </Link>
-          <Link
-            to=""
-            onClick={() => setOpen(false)}
-            className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
-              open
-                ? "translate-y-0  duration-300 delay-[0.6s] opacity-100"
-                : "translate-y-5 opacity-0"
-            } `}
-          >
-            Contact
-          </Link>
+          </HashLink>
+          <Modal>
+            <Modal.Open opens="about">
+              <button
+                onClick={() => setOpen(false)}
+                className={`text-2xl text-white font-medium p-2 hover:text-red1 transition-all duration-300 ${
+                  open
+                    ? "translate-y-0  duration-300 delay-[0.6s] opacity-100"
+                    : "translate-y-5 opacity-0"
+                } `}
+              >
+                Contact
+              </button>
+            </Modal.Open>
+            <Modal.Window name="about">
+              <About onCloseModal={undefined as never} />
+            </Modal.Window>
+          </Modal>
         </div>
         <div className="absolute left-1/2 -translate-x-1/2 bottom-0 flex gap-6 p-4">
           <Link
-            to=""
+            to="https://www.linkedin.com/in/%C5%82ukasz-michnik-98b8122ab/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className={`text-3xl text-white  p-2 hover:text-red1 transition-all duration-300 ${
               open ? " duration-300 delay-[0.7s] opacity-100" : "opacity-0"
@@ -118,7 +132,9 @@ export default function MobileNav() {
             <FaLinkedinIn />
           </Link>
           <Link
-            to=""
+            to="https://github.com/JudiJudi6"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className={`text-3xl text-white p-2 hover:text-red1 transition-all duration-300 ${
               open ? "  duration-300 delay-[0.7s] opacity-100" : " opacity-0"

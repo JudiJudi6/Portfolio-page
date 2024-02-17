@@ -14,6 +14,7 @@ import TextArea from "../TextArea";
 import CloseButton from "../CloseButton";
 import emailjs from "@emailjs/browser";
 import Spinner from "../Spinner";
+import { HashLink } from "react-router-hash-link";
 
 interface AboutProps {
   onCloseModal: () => void;
@@ -205,12 +206,13 @@ export default function About({ onCloseModal }: AboutProps) {
                 )}
               </motion.div>
             </div>
-            <Link
-              to=""
+            <HashLink
+              to="/#skills"
+              smooth
               className="text-xs self-end hover:text-red1 transition-colors duration-300 p-2"
             >
               Of course, that's not all skills...
-            </Link>
+            </HashLink>
           </div>
         )}
       </motion.div>

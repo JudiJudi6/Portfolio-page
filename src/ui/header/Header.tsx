@@ -20,10 +20,10 @@ export default function Header() {
             <WavyText text="Łukasz Michnik" type="h1" delay={1.6} />
             <WavyText text="Front-end Developer" type="h3" delay={1.6} />
             <Modal>
-              <Modal.Open opens="currency">
+              <Modal.Open opens="about">
                 <Button>About Me</Button>
               </Modal.Open>
-              <Modal.Window name="currency">
+              <Modal.Window name="about">
                 <About onCloseModal={undefined as never} />
               </Modal.Window>
             </Modal>
