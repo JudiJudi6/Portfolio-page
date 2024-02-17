@@ -1,9 +1,60 @@
+import { HashLink } from "react-router-hash-link";
 import LinkItem from "./LinkItem";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function Footer() {
+  const [topHover, setTopHover] = useState<boolean>(false);
+  const refOne = useRef(null);
+  const inViewOne = useInView(refOne);
+  const refTwo = useRef(null);
+  const inViewTwo = useInView(refTwo);
+  //other skills!!!!!!!!!!!!!!!1
+
+  const MotionHash = motion(HashLink);
+
   return (
-    <div className="h-[30vh] bg-bg mt-20 flex justify-center items-center flex-col gap-5">
-      <div className="flex gap-4">
+    <div className="relative h-[30vh] bg-bg mt-20 flex justify-center items-center flex-col gap-5">
+      <MotionHash
+        to="/#"
+        smooth
+        className="absolute top-0 right-0 text-white opacity-60 text-xs italic p-5 transition-opacity duration-300 hover:opacity-100 flex justify-center items-center h-[80px]"
+        onHoverStart={() => setTopHover(true)}
+        onHoverEnd={() => setTopHover(false)}
+        onFocus={() => setTopHover(true)}
+        onBlur={() => setTopHover(false)}
+      >
+        {topHover && (
+          <div className=" rotate-[-90deg]">
+            <motion.img
+              src="/arrow.svg"
+              alt=""
+              className="h-[30px] origin-left"
+              animate={
+                topHover
+                  ? {
+                      scaleX: 1,
+                    }
+                  : {
+                      scaleX: 0,
+                    }
+              }
+              initial={{
+                scaleX: 0,
+              }}
+              transition={{ ease: "easeInOut", duration: 0.3 }}
+            />
+          </div>
+        )}
+        <p>Go to the top</p>
+      </MotionHash>
+      <motion.div
+        ref={refOne}
+        className="flex gap-4"
+        animate={inViewOne && { translateX: 0, opacity: 1 }}
+        initial={{ translateX: "100px", opacity: 0 }}
+        transition={{ ease: "easeInOut", duration: 0.3, delay: 0.2 }}
+      >
         <LinkItem
           title="Github"
           to="https://github.com/JudiJudi6"
@@ -14,10 +65,16 @@ export default function Footer() {
           title="Linkedin"
           to="https://www.linkedin.com/in/%C5%82ukasz-michnik-98b8122ab/"
         />
-      </div>
-      <p className="italic text-xs text-white opacity-60 text-center">
+      </motion.div>
+      <motion.p
+        ref={refTwo}
+        className="italic text-xs text-white opacity-60 text-center"
+        animate={inViewTwo && { translateX: 0, opacity: 0.6 }}
+        initial={{ translateX: "-100px", opacity: 0 }}
+        transition={{ ease: "easeInOut", duration: 0.3, delay: 0.2 }}
+      >
         {new Date().getFullYear()} Łukasz Michnik - Email - 7lukasz8@gmail.com
-      </p>
+      </motion.p>
     </div>
   );
 }
