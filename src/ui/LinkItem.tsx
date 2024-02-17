@@ -27,7 +27,7 @@ export default function LinkItem({ title, to, type }: LinkItemProps) {
         onFocus={() => setHover(true)}
         onBlur={() => setHover(false)}
       >
-        <p className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+        <p className="opacity-80 hover:opacity-100 transition-opacity duration-300">
           {title}
         </p>
         <motion.div
@@ -57,7 +57,7 @@ export default function LinkItem({ title, to, type }: LinkItemProps) {
         onFocus={() => setHover(true)}
         onBlur={() => setHover(false)}
       >
-        <p className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+        <p className="opacity-80 hover:opacity-100 transition-opacity duration-300">
           {title}
         </p>
         <motion.div
@@ -85,7 +85,7 @@ export default function LinkItem({ title, to, type }: LinkItemProps) {
         onFocus={() => setHover(true)}
         onBlur={() => setHover(false)}
       >
-        <p className="opacity-60 hover:opacity-100 transition-opacity duration-300">
+        <p className="opacity-80 hover:opacity-100 transition-opacity duration-300">
           {title}
         </p>
         <motion.div

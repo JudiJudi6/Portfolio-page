@@ -49,7 +49,7 @@ export default function WavyText({
   if (type === "h1") {
     return (
       <motion.h1
-        className="flex overflow-hidden text-2xl xs:text-3xl md600:text-4xl md800:text-5xl font-bold tracking-wide"
+        className="flex py-1 overflow-hidden text-2xl xs:text-3xl md600:text-4xl md800:text-5xl font-bold tracking-wide"
         variants={container}
         initial="hidden"
         animate="visible"
