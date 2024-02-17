@@ -9,20 +9,20 @@ export default function Footer() {
   const inViewOne = useInView(refOne);
   const refTwo = useRef(null);
   const inViewTwo = useInView(refTwo);
-  //other skills!!!!!!!!!!!!!!!1
 
   const MotionHash = motion(HashLink);
 
   return (
-    <div className="relative h-[30vh] bg-bg mt-20 flex justify-center items-center flex-col gap-5">
-      <MotionHash
-        to="/#"
-        smooth
+    <div className="relative h-[30vh] bg-bg mt-20 flex justify-center items-center flex-col gap-5 overflow-hidden">
+      <motion.button
         className="absolute top-0 right-0 text-white opacity-60 text-xs italic p-5 transition-opacity duration-300 hover:opacity-100 flex justify-center items-center h-[80px]"
         onHoverStart={() => setTopHover(true)}
         onHoverEnd={() => setTopHover(false)}
         onFocus={() => setTopHover(true)}
         onBlur={() => setTopHover(false)}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       >
         {topHover && (
           <div className=" rotate-[-90deg]">
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
         )}
         <p>Go to the top</p>
-      </MotionHash>
+      </motion.button>
       <motion.div
         ref={refOne}
         className="flex gap-4"
