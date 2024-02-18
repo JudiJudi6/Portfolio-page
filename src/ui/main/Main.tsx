@@ -17,7 +17,7 @@ import { FaPencilAlt } from "react-icons/fa";
 
 export default function Main() {
   return (
-    <main className="w-full px-4 xm:px-8 md600:px-14 md900:px-20 max-w-7xl flex flex-col justify-center items-center mx-auto">
+    <main className="w-full px-4 xm:px-8 md600:px-14 md900:px-20 max-w-7xl flex flex-col justify-center items-center mx-auto mb-20">
       <section
         id="projects"
         className="w-full flex flex-col justify-center items-center"

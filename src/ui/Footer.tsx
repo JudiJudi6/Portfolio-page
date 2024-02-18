@@ -10,7 +10,7 @@ export default function Footer() {
   const inViewTwo = useInView(refTwo);
 
   return (
-    <div className="relative h-[30vh] bg-bg mt-20 flex justify-center items-center flex-col gap-5 overflow-hidden">
+    <div className="relative h-[30vh] bg-bg flex justify-center items-center flex-col gap-5 overflow-hidden">
       <motion.button
         className="absolute top-0 right-0 text-white opacity-60 text-xs italic p-5 transition-opacity duration-300 hover:opacity-100 flex justify-center items-center h-[80px]"
         onHoverStart={() => setTopHover(true)}
