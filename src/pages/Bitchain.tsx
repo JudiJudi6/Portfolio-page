@@ -1,11 +1,14 @@
 import React from "react";
-import ProjectHeader from "../ui/ProjectHeader";
-import AboutProject from "../ui/AboutProject";
+import ProjectHeader from "../ui/projectPage/ProjectHeader";
+import AboutProject from "../ui/projectPage/AboutProject";
 import Footer from "../ui/Footer";
-import Next from "../ui/Next";
-import ProjectDescription from "../ui/ProjectDescription";
+import Next from "../ui/projectPage/Next";
+import ProjectDescription from "../ui/projectPage/ProjectDescription";
+import ProjectGallery from "../ui/projectPage/ProjectGallery";
 
 export default function Bitchain() {
+
+  
   return (
     <div>
       <ProjectHeader
@@ -25,8 +28,53 @@ export default function Bitchain() {
         bgText="Bitchain"
         deployed={false}
       />
-      <ProjectDescription type="left" text="" title="" img="" />
-      <div className="h-screen"></div>
+      <ProjectDescription
+        type="left"
+        title="Application Development"
+        text={
+          <p>
+            As the <span className="text-blue-500">Project Leader</span>, I am
+            responsible for application development, ideas and design, team
+            management and distribution of tasks. The project works on real-time
+            data from{" "}
+            <a
+              href="https://docs.coincap.io/"
+              className="hover:text-blue-500 transition-colors duration-300"
+            >
+              Coin Cap API
+            </a>{" "}
+            using react query. The backend is built with Python Django, using
+            <span className="text-blue-500"> Rest API</span>. The project is
+            built in the Student Science Club "Kod" and will be deployed on
+            their server, but at the moment after 4 months of work it is not
+            suitable for it, so there in no Live Demo :(
+          </p>
+        }
+        img="/bitchain/ph1.png"
+      />
+      <ProjectDescription
+        type="right"
+        text={
+          <p>
+            I built <span className="text-blue-500">markets page</span>, where
+            the user can view the stock prices of cryptocurrencies, filter them
+            and search by name. There are also cards with the most popular
+            currencies according to certain algorithms. Each row can take user
+            to the{" "}
+            <span className="text-blue-500">
+              page with specific market data
+            </span>{" "}
+            about the currency , which I also made. I am also responsible for
+            communicating with the external api and downloading data from it.
+            For navigation, routing, login page and many other things,{" "}
+            <span className="text-blue-500"> in general</span>, for most of the
+            interface and mechanics shown in the pictures.
+          </p>
+        }
+        title="As Frontend Developer"
+        img="/bitchain/ph2.png"
+      />
+      <ProjectGallery />
       <Next link="/wallet-wise" projectName="Wallet Wise" />
       <Footer />
     </div>

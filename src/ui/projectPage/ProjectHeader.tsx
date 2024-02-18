@@ -1,7 +1,7 @@
 import React from "react";
-import Navigation from "./header/Navigation";
-import Loader from "./header/Loader";
-import WavyText from "./WavyText";
+import Navigation from "../header/Navigation";
+import Loader from "../header/Loader";
+import WavyText from "../WavyText";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
