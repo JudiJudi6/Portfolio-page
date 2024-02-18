@@ -46,7 +46,7 @@ export default function Main() {
             desc="Interactive animation in Three.js allowing users to fully control it"
           />
           <MainItem
-            img="/bitchain/bitchain4.jpg"
+            img="/useless/useless.jpg"
             link="/useless-tools"
             title="Useless Tools"
             type="right"

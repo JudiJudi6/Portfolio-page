@@ -6,13 +6,13 @@ import { HiArrowLongRight } from "react-icons/hi2";
 interface AboutProjectProps {
   desc: string;
   link: string;
-  deployed: boolean;
+  liveLink: string;
   technologies: string;
   bgText: string;
 }
 
 export default function AboutProject({
-  deployed,
+  liveLink,
   desc,
   link,
   bgText,
@@ -24,7 +24,7 @@ export default function AboutProject({
   const MotionLink = motion(Link);
 
   return (
-    <div className="relative w-full p-6 py-24 bg-[#0c0c10] text-white text-center flex justify-center items-center overflow-hidden">
+    <div className="relative w-full p-6 pt-24 pb-10 bg-[#0c0c10] text-white text-center flex justify-center items-center overflow-hidden">
       <p className="absolute -bottom-8 left-[10%] text-9xl uppercase text-modalSecDark font-semibold">
         {bgText}
       </p>
@@ -57,20 +57,38 @@ export default function AboutProject({
           <span className="text-blue-500 ">Technologies: </span>
           {technologies}
         </motion.p>
-        <MotionLink
-          to={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          animate={inViewOne && { translateY: 0, opacity: 1 }}
-          initial={{ translateY: "80px", opacity: 0 }}
-          transition={{ ease: "easeInOut", duration: 0.3, delay: 0.8 }}
-          className="relative block p-4 max-w-[170px]  my-10 mx-auto border-2 border-solid border-white font-semibold  transition-colors duration-300 hover:bg-white hover:text-black group"
-        >
-          {deployed ? "Visit Website" : "Visit Repo"}
-          <motion.div className="absolute -right-4 text-3xl text-white group-hover:translate-x-1/3 -translate-y-[90%] transition-transform duration-300">
-            <HiArrowLongRight />
-          </motion.div>
-        </MotionLink>
+        <div className="flex mt-5 gap-6 flex-col md600:flex-row p-4 md600:pt-6">
+          <MotionLink
+            to={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            animate={inViewOne && { translateY: 0, opacity: 1 }}
+            initial={{ translateY: "80px", opacity: 0 }}
+            transition={{ ease: "easeInOut", duration: 0.3, delay: 0.8 }}
+            className="relative block p-4 max-w-[170px] w-full  my-2 mx-auto border-2 border-solid border-white font-semibold  transition-colors duration-300 hover:bg-white hover:text-black group"
+          >
+            Visit Repo
+            <motion.div className="absolute -right-4 text-3xl text-white group-hover:translate-x-1/3 -translate-y-[90%] transition-transform duration-300">
+              <HiArrowLongRight />
+            </motion.div>
+          </MotionLink>
+          {liveLink && (
+            <MotionLink
+              to={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              animate={inViewOne && { translateY: 0, opacity: 1 }}
+              initial={{ translateY: "80px", opacity: 0 }}
+              transition={{ ease: "easeInOut", duration: 0.3, delay: 0.8 }}
+              className="relative block p-4 max-w-[170px] w-full my-2 mx-auto border-2 border-solid border-white font-semibold  transition-colors duration-300 bg-white hover:bg-transparent text-black hover:text-white group"
+            >
+              Live Demo
+              <motion.div className="absolute -right-4 text-3xl text-white group-hover:translate-x-1/3 -translate-y-[90%] transition-transform duration-300">
+                <HiArrowLongRight />
+              </motion.div>
+            </MotionLink>
+          )}
+        </div>
       </div>
     </div>
   );
