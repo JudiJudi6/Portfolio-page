@@ -7,8 +7,6 @@ import ProjectDescription from "../ui/projectPage/ProjectDescription";
 import ProjectGallery from "../ui/projectPage/ProjectGallery";
 
 export default function Bitchain() {
-
-  
   return (
     <div>
       <ProjectHeader
@@ -74,7 +72,7 @@ export default function Bitchain() {
         title="As Frontend Developer"
         img="/bitchain/ph2.png"
       />
-      <ProjectGallery />
+      <ProjectGallery img="/bitchain/ph3.png" />
       <Next link="/wallet-wise" projectName="Wallet Wise" />
       <Footer />
     </div>
