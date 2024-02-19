@@ -7,7 +7,6 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
 import { SiThreedotjs } from "react-icons/si";
-import { Link } from "react-router-dom";
 import FormInput from "../FormInput";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextArea from "../TextArea";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import LinkItem from "../LinkItem";
 import Modal from "../Modal";
 import About from "./About";

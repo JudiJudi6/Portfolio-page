@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectHeader from "../ui/projectPage/ProjectHeader";
 import AboutProject from "../ui/projectPage/AboutProject";
 import Footer from "../ui/Footer";

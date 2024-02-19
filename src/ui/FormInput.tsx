@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FieldError,
@@ -23,7 +23,6 @@ interface FormInputProps {
 }
 
 export default function FormInput({
-  error,
   id,
   register,
   placeholder,
