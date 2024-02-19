@@ -32,7 +32,7 @@ export default function Main() {
             desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
           />
           <MainItem
-            img="/bitchain/bitchain4.jpg"
+            img="/wallet/wallet.jpg"
             link="/wallet-wise"
             title="Wallet Wise"
             type="right"
