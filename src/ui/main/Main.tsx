@@ -39,7 +39,7 @@ export default function Main() {
             desc="Wallet simulator that allows to exchange and transfer funds between users"
           />
           <MainItem
-            img="/bitchain/bitchain4.jpg"
+            img="/three/three.jpg"
             link="/three-animation"
             title="Interactive Robots Animation"
             type="left"

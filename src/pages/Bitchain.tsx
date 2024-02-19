@@ -24,7 +24,7 @@ export default function Bitchain() {
         technologies="React, Typescript, Tailwind, Django, Rest API"
         link="https://github.com/skni-kod/Bitchain-Frontend"
         bgText="Bitchain"
-        deployed={false}
+        liveLink=""
       />
       <ProjectDescription
         type="left"

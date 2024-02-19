@@ -1,4 +1,3 @@
-import React from "react";
 import Navigation from "../header/Navigation";
 import Loader from "../header/Loader";
 import WavyText from "../WavyText";
@@ -14,6 +13,7 @@ interface ProjectHeaderProps {
   time: string;
   leader?: boolean;
   skni?: boolean;
+  descBg?: boolean;
 }
 
 export default function ProjectHeader({
@@ -25,6 +25,7 @@ export default function ProjectHeader({
   title,
   leader,
   skni,
+  descBg = true,
 }: ProjectHeaderProps) {
   return (
     <div className="relative bg-bg w-full h-screen overflow-hidden" id="header">
@@ -40,7 +41,10 @@ export default function ProjectHeader({
           <div className="flex flex-col justify-center items-center gap-6 md600:gap-10">
             <WavyText text={title} type="h1" delay={2} />
             <motion.h3
-              className="text-sm xm:text-base md600:text-lg italic text-center font-semibold shadow-[0_0px_20px_20px_rgba(28,29,37,0.3)] bg-[#0c0c10] opacity-30 p-2"
+              className={`text-sm xm:text-base md600:text-lg italic text-center font-semibold opacity-30 p-2 ${
+                descBg &&
+                "bg-[#0c0c10] shadow-[0_0px_20px_20px_rgba(28,29,37,0.3)]"
+              }`}
               animate={{ translateY: 0, opacity: 1 }}
               initial={{ translateY: "40px", opacity: 0 }}
               transition={{ ease: "easeInOut", duration: 0.8, delay: 2 }}
