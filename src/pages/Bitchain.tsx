@@ -42,7 +42,7 @@ export default function Bitchain() {
             </a>{" "}
             using react query. The backend is built with Python Django, using
             <span className="text-blue-500"> Rest API</span>. The project is
-            built in the Student Science Club "Kod" and will be deployed on
+            built in the Students IT Club "Kod" and will be deployed on
             their server, but at the moment after 4 months of work it is not
             suitable for it, so there in no Live Demo :(
           </p>
