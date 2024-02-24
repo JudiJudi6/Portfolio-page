@@ -1,4 +1,5 @@
 import { motion, Variants } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface WavyTextProps {
   text: string;
@@ -13,7 +14,14 @@ export default function WavyText({
   duration = 0.05,
   type,
 }: WavyTextProps) {
-  const letters = Array.from(text);
+  const letters = useRef<string[]>(Array.from(text));
+
+  useEffect(
+    function () {
+      letters.current = Array.from(text);
+    },
+    [text]
+  );
 
   const container: Variants = {
     hidden: {
@@ -54,7 +62,7 @@ export default function WavyText({
         initial="hidden"
         animate="visible"
       >
-        {letters.map((letter, index) => (
+        {letters.current.map((letter, index) => (
           <motion.span key={index} variants={child}>
             {letter === " " ? "\u00A0" : letter}
           </motion.span>
@@ -69,7 +77,7 @@ export default function WavyText({
         initial="hidden"
         animate="visible"
       >
-        {letters.map((letter, index) => (
+        {letters.current.map((letter, index) => (
           <motion.span key={index} variants={child}>
             {letter === " " ? "\u00A0" : letter}
           </motion.span>

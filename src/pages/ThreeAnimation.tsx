@@ -4,37 +4,21 @@ import ProjectDescription from "../ui/projectPage/ProjectDescription";
 import ProjectGallery from "../ui/projectPage/ProjectGallery";
 import Next from "../ui/projectPage/Next";
 import Footer from "../ui/Footer";
-import { useUserWidth } from "../hooks/useUserWidth";
 
 export default function ThreeAnimation() {
-  const width = useUserWidth();
   return (
     <div>
-      {width > 500 ? (
-        <ProjectHeader
-          title="Interactive Robots Animation"
-          desc="Interactive animation in Three.js allowing users to fully control it"
-          role="Author"
-          leader={false}
-          context="Subject exemption at university"
-          skni={false}
-          time="~ 2 months"
-          img="/three/three.jpg"
-          descBg={false}
-        />
-      ) : (
-        <ProjectHeader
-          title="Interactive Animation"
-          desc="Interactive animation in Three.js allowing users to fully control it"
-          role="Author"
-          leader={false}
-          context="Subject exemption at university"
-          skni={false}
-          time="~ 2 months"
-          img="/three/three.jpg"
-          descBg={false}
-        />
-      )}
+      <ProjectHeader
+        title="Robots Animation"
+        desc="Interactive animation in Three.js allowing users to fully control it"
+        role="Author"
+        leader={false}
+        context="Subject exemption at university"
+        skni={false}
+        time="~ 2 months"
+        img="/three/three.jpg"
+        descBg={false}
+      />
       <AboutProject
         desc="The animation is built with 4 robots, and 13 stages of animation. User can control each stage using arrows or interface. The animation can be moved forward and backward. The scene lighting consists of 6 lamps, also controlled by the user, lamps can be switched or brightened. Robots and camera animations are written in an additional library - Gsap.js. Doing the project allowed me to be exempt from a subject at university dealing with 3D graphics."
         technologies="React, Three.js, Gsap.js, Tailwind"
