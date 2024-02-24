@@ -20,7 +20,7 @@ export default function UselessTools() {
       />
       <AboutProject
         desc="Useless Tools was my first big project, which makes it not perfect, and it's here because I have sentiment for it. The project contains tools useful for people at the university, solves tasks when given data. Includes algorithms that solve Chomsky, Greibach grammar tasks and Cocke–Younger–Kasami algorithm. There is also a complex password generator. Plans for the project in general were ambitious, but we quickly realized that our technology stack would not be able to handle it."
-        technologies="Html, Css, JavaScript, Django"
+        technologies="Html, Sass, JavaScript, Django"
         link="https://github.com/skni-kod/Useless-Tools"
         bgText="Useless"
         liveLink="https://ut.skni.edu.pl/home"
