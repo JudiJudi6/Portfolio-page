@@ -184,6 +184,30 @@ export default function SkillItem({
               </Link>
             </li>
           </ul>
+          <p
+            className={`text-sm text-left w-full transition-colors duration-300 my-4 mt-6 ${
+              hover ? "text-black" : "text-stone-500"
+            }`}
+          >
+            Course in progress:
+          </p>
+          <ul
+            className={`text-sm   text-left w-full transition-colors duration-300 flex flex-col gap-3 ${
+              hover ? "text-black" : "text-stone-500"
+            } ${libs && "mt-2"}`}
+          >
+            <li>
+              <Link
+                to="https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors duration-300 hover:text-[#0011ff]"
+              >
+                - Node.js, Express, MongoDB & More: The Complete Bootcamp 2024 -
+                42h - Jonas Schmedtmann
+              </Link>
+            </li>
+          </ul>
         </div>
       )}
     </motion.div>
