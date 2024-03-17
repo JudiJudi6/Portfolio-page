@@ -189,13 +189,24 @@ export default function SkillItem({
               hover ? "text-black" : "text-stone-500"
             }`}
           >
-            Course in progress:
+            Courses in progress:
           </p>
           <ul
             className={`text-sm   text-left w-full transition-colors duration-300 flex flex-col gap-3 ${
               hover ? "text-black" : "text-stone-500"
             } ${libs && "mt-2"}`}
           >
+            <li>
+              <Link
+                to="https://www.udemy.com/course/nextjs-react-the-complete-guide/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors duration-300 hover:text-[#0011ff]"
+              >
+                - Next.js 14 & React - The Complete Guide - 32h - Maximilian
+                Schwarzmuller
+              </Link>
+            </li>
             <li>
               <Link
                 to="https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/"
