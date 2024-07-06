@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-import Navigation from "./Navigation";
-import Button from "../Button";
-import Image from "./Image";
-import ShapesMask from "./ShapesMask";
-import WavyText from "../WavyText";
-import Loader from "./Loader";
 import { HiArrowLongRight } from "react-icons/hi2";
+import Button from "../Button";
 import Modal from "../Modal";
+import WavyText from "../WavyText";
 import About from "./About";
 import ContactButtons from "./ContactButtons";
+import Image from "./Image";
+import Navigation from "./Navigation";
+import ShapesMask from "./ShapesMask";
 
 export default function Header() {
   return (
@@ -17,8 +16,8 @@ export default function Header() {
         <Navigation />
         <div className="w-full h-[calc(100vh-88px)] flex  justify-between items-center  px-8 xm:px-20  text-white max-w-7xl pb-[88px] gap-12">
           <div className="flex flex-col">
-            <WavyText text="Łukasz Michnik" type="h1" delay={2} />
-            <WavyText text="Front-end Developer" type="h3" delay={2} />
+            <WavyText text="Łukasz Michnik" type="h1" delay={0.3} />
+            <WavyText text="Front-end Developer" type="h3" delay={0.4} />
             <Modal>
               <Modal.Open opens="about">
                 <Button>About Me</Button>
@@ -51,7 +50,6 @@ export default function Header() {
           <HiArrowLongRight />
         </span>
       </motion.button>
-      <Loader />
       <ContactButtons />
     </div>
   );

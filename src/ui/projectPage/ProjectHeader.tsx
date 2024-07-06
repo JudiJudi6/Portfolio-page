@@ -1,8 +1,7 @@
-import Navigation from "../header/Navigation";
-import Loader from "../header/Loader";
-import WavyText from "../WavyText";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Navigation from "../header/Navigation";
+import WavyText from "../WavyText";
 
 interface ProjectHeaderProps {
   img: string;
@@ -39,7 +38,7 @@ export default function ProjectHeader({
         <Navigation type="project" />
         <div className="relative w-full h-[calc(100vh-88px)] flex flex-col justify-center items-center text-white max-w-7xl p-6 pb-[88px] gap-12 z-20">
           <div className="flex flex-col justify-center items-center gap-6 md600:gap-10">
-            <WavyText text={title} type="h1" delay={2} />
+            <WavyText text={title} type="h1" delay={0.3} />
             <motion.h3
               className={`text-sm xm:text-base md600:text-lg italic text-center font-semibold opacity-30 p-2 ${
                 descBg &&
@@ -47,7 +46,7 @@ export default function ProjectHeader({
               }`}
               animate={{ translateY: 0, opacity: 1 }}
               initial={{ translateY: "40px", opacity: 0 }}
-              transition={{ ease: "easeInOut", duration: 0.8, delay: 2 }}
+              transition={{ ease: "easeInOut", duration: 0.8 }}
             >
               {desc}
             </motion.h3>
@@ -57,7 +56,7 @@ export default function ProjectHeader({
           <motion.div
             animate={{ translateX: 0, opacity: 1 }}
             initial={{ translateX: "-50px", opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.8, delay: 2 }}
+            transition={{ ease: "easeInOut", duration: 0.8 }}
           >
             <p>
               <span className="text-blue-500">Role</span>{" "}
@@ -70,7 +69,7 @@ export default function ProjectHeader({
           <motion.div
             animate={{ translateY: 0, opacity: 1 }}
             initial={{ translateY: "50px", opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.8, delay: 2 }}
+            transition={{ ease: "easeInOut", duration: 0.8 }}
           >
             <p>
               <span className="text-blue-500">Context</span> {context}{" "}
@@ -89,7 +88,7 @@ export default function ProjectHeader({
           <motion.div
             animate={{ translateX: 0, opacity: 1 }}
             initial={{ translateX: "50px", opacity: 0 }}
-            transition={{ ease: "easeInOut", duration: 0.8, delay: 2 }}
+            transition={{ ease: "easeInOut", duration: 0.8 }}
           >
             <p>
               {" "}
@@ -98,7 +97,6 @@ export default function ProjectHeader({
           </motion.div>
         </div>
       </div>
-      <Loader />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
 import { SiThreedotjs } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
 import FormInput from "../FormInput";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextArea from "../TextArea";
@@ -90,9 +91,9 @@ export default function About({ onCloseModal }: AboutProps) {
               <span className="text-red1">20 years old guy</span> who decided to
               become a <span className="text-red1">full stack developer</span>.
               I am currently learning web technologies{" "}
-              <span className="text-red1">for almost 1.5 year.</span> I am also
-              a <span className="text-red1">student</span> at Rzeszów University
-              of Technology in my second year. <br />
+              <span className="text-red1">for almost 2 years.</span> I am also a{" "}
+              <span className="text-red1">student</span> at Rzeszów University
+              of Technology in my third year. <br />
               In my free time, I like to build new projects and develop existing
               ones, not necessarily finish... but someday I will{" "}
               <span className="text-red1">definitely finish</span> all of them
@@ -109,6 +110,25 @@ export default function About({ onCloseModal }: AboutProps) {
         {width > 800 && (
           <div className="w-full flex flex-col gap-4">
             <div className="flex h-10  w-full justify-evenly items-start ">
+              <motion.div
+                className="flex flex-col justify-center w-[60px] items-center hover:text-[#444444] transition-colors duration-300"
+                onHoverStart={() => setTechnology("next")}
+                onHoverEnd={() => setTechnology("")}
+              >
+                <span className="text-3xl">
+                  <SiNextdotjs />
+                </span>
+                {technology === "next" && (
+                  <motion.p
+                    className="font-semibold text-xs"
+                    animate={{ opacity: 1, translateY: 0 }}
+                    initial={{ opacity: 0, translateY: "10px" }}
+                    transition={{ ease: "easeInOut", duration: 0.3 }}
+                  >
+                    Next.js
+                  </motion.p>
+                )}
+              </motion.div>
               <motion.div
                 className="flex flex-col justify-center w-[60px] items-center hover:text-cyan-500 transition-colors duration-300"
                 onHoverStart={() => setTechnology("react")}

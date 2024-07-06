@@ -5,10 +5,14 @@ import { FaReact } from "react-icons/fa";
 import { MdOutlineMore } from "react-icons/md";
 import { BiLogoTypescript } from "react-icons/bi";
 import { RiJavascriptFill } from "react-icons/ri";
-import { SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
 import { SiThreedotjs } from "react-icons/si";
+import { FaDocker } from "react-icons/fa";
 import { SiStyledcomponents } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
+import { SiPostgresql } from "react-icons/si";
+import { PiFileSqlLight } from "react-icons/pi";
 import { SiJest } from "react-icons/si";
 import { SiSupabase } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
@@ -25,9 +29,23 @@ export default function Main() {
         <SectionTitle text="Best Projects" />
         <div className="flex flex-col justify-center items-center gap-16">
           <MainItem
+            img="/firedesk/ph1.jpg"
+            link="/firedesk"
+            title="FireDesk"
+            type="left"
+            desc="Huge project created in cooperation with Xebia Company and Rzeszów University of Technology, based on the creation of MVP application for office management and workstation bookings."
+          />
+          <MainItem
             img="/bitchain/bitchain.jpg"
             link="/bitchain"
             title="Project Bitchain"
+            type="right"
+            desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
+          />
+          <MainItem
+            img="/bitchain/bitchain.jpg"
+            link="/bitchain"
+            title="Kulinarna Baza"
             type="left"
             desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
           />
@@ -57,6 +75,12 @@ export default function Main() {
       <section id="skills" className="w-full px-8 max-w-[800px]">
         <SectionTitle text="Skills" />
         <div className="flex flex-col justify-center items-start md:items-center gap-5">
+          <SkillItem
+            skill="Next.js"
+            libs="App router, Page router, Server actions, NextAuth, Cache managing, Optimistic Design, and much more UX optimizations"
+            icon={<SiNextdotjs />}
+            color="#444444"
+          />
           <SkillItem
             skill="React"
             libs="React Query, React Redux, React Router, React Testing Library, Framer Motion, React Three Fiber, ReCharts, React Hook Form, Material UI, HighCharts.js, and other libraries. HOC pattern and Compound Components Pattern"
@@ -103,6 +127,30 @@ export default function Main() {
               color="#44d093"
             />
             <SkillItem
+              skill="SQL"
+              libs=""
+              icon={<PiFileSqlLight />}
+              color="#dc7939"
+            />
+            <SkillItem
+              skill="MongoDB"
+              libs=""
+              icon={<DiMongodb />}
+              color="#55ad47"
+            />
+            <SkillItem
+              skill="PostgreSQL"
+              libs=""
+              icon={<SiPostgresql />}
+              color="#396c94"
+            />
+            <SkillItem
+              skill="Docker"
+              libs=""
+              icon={<FaDocker />}
+              color="#0895e7"
+            />
+            <SkillItem
               skill="HTML"
               libs=""
               icon={<FaHtml5 />}
@@ -116,10 +164,10 @@ export default function Main() {
             />
           </div>
           <SkillItem
-            skill="Plans For The Future"
-            libs="Next.js, Node.js, Express.js, MongoDB and maybe Vue.js"
+            skill="Currently learning"
+            libs="Node.js, Express.js"
             icon={<MdOutlineMore />}
-            color="#77fb66"
+            color="#5ce708"
           />
         </div>
         <SkillItem

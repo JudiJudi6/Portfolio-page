@@ -9,6 +9,7 @@ import Homepage from "./pages/Homepage.tsx";
 import WalletWise from "./pages/WalletWise.tsx";
 import ThreeAnimation from "./pages/ThreeAnimation.tsx";
 import UselessTools from "./pages/UselessTools.tsx";
+import FireDesk from "./pages/FireDesk.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Homepage /> },
       { path: "bitchain", element: <Bitchain /> },
+      { path: "firedesk", element: <FireDesk /> },
       { path: "wallet-wise", element: <WalletWise /> },
       { path: "three-animation", element: <ThreeAnimation /> },
       { path: "useless-tools", element: <UselessTools /> },
