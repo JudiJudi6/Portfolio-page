@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
-import { motion, useInView } from "framer-motion";
 
 interface MainItemProps {
   img: string;
@@ -21,8 +21,6 @@ export default function MainItem({
   desc,
 }: MainItemProps) {
   const [hover, setHover] = useState<boolean>(false);
-  const ref = useRef(null);
-  const inView = useInView(ref);
 
   return (
     <MotionLink
@@ -32,6 +30,13 @@ export default function MainItem({
       }`}
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
+      whileInView={{ translateX: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      initial={{
+        translateX: `${type === "left" ? "-100px" : "100px"}`,
+        opacity: 0,
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div
         className="absolute top-0 left-0 h-full w-full bg-cover bg-center"
@@ -64,9 +69,9 @@ export default function MainItem({
         <Button>Show</Button>
       </motion.div>
       <motion.div
-        ref={ref}
         className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-blue3 to-blue4 z-50"
-        animate={inView && { translateX: "105%" }}
+        whileInView={{ translateX: "105%" }}
+        viewport={{ once: true, amount: 0.5 }}
         initial={{ translateX: "0" }}
         transition={{ duration: 0.3, ease: "easeInOut", delay: 0.4 }}
       ></motion.div>

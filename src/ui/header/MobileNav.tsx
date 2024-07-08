@@ -56,11 +56,13 @@ export default function MobileNav() {
       </button>
       <motion.div
         animate={open ? { translateX: 0 } : { translateX: "-100%" }}
+        initial={{ translateX: "-100%" }}
         transition={{ ease: "easeInOut", duration: time }}
         className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-r from-red1 to-red2 -translate-x-full z-20"
       ></motion.div>
       <motion.div
         animate={open ? { translateX: 0 } : { translateX: "-100%" }}
+        initial={{ translateX: "-100%" }}
         transition={{ ease: "easeInOut", duration: 0.6 }}
         className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-r from-blue1 to-blue2 -translate-x-full z-20 flex flex-col justify-center items-center"
       >

@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import React from "react";
 
 interface ProjectDescriptionProps {
   type: "right" | "left";
@@ -14,18 +14,13 @@ export default function ProjectDescription({
   title,
   type,
 }: ProjectDescriptionProps) {
-  const ref = useRef(null);
-  const inView = useInView(ref);
-  const textRef = useRef(null);
-  const inViewText = useInView(textRef);
-
   return (
     <div className="flex flex-col md900:grid md900:grid-cols-2 p-6 md800:p-10 md800:pb-4 text-center md900:mt-10 max-w-[1170px] mx-auto overflow-hidden">
       {type === "left" && (
         <>
           <motion.div
-            ref={textRef}
-            animate={inViewText && { translateX: 0, opacity: 1 }}
+            whileInView={{ translateX: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
             initial={{
               translateX: "-100px",
               opacity: 0,
@@ -40,8 +35,8 @@ export default function ProjectDescription({
             {text}
           </motion.div>
           <motion.div
-            ref={ref}
-            animate={inView && { translateX: 0, opacity: 1 }}
+            whileInView={{ translateX: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
             initial={{
               translateX: "100px",
               opacity: 0,
@@ -56,8 +51,8 @@ export default function ProjectDescription({
       {type === "right" && (
         <>
           <motion.div
-            ref={ref}
-            animate={inView && { translateX: 0, opacity: 1 }}
+            whileInView={{ translateX: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
             initial={{
               translateX: "-100px",
               opacity: 0,
@@ -68,8 +63,8 @@ export default function ProjectDescription({
             <img src={img} />
           </motion.div>
           <motion.div
-            ref={textRef}
-            animate={inViewText && { translateX: 0, opacity: 1 }}
+            whileInView={{ translateX: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
             initial={{
               translateX: "100px",
               opacity: 0,

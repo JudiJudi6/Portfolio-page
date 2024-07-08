@@ -1,21 +1,15 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 interface ProjectGalleryProps {
   img: string;
 }
 
 export default function ProjectGallery({ img }: ProjectGalleryProps) {
-  const ref = useRef(null);
-  const inView = useInView(ref);
-  const phRef = useRef(null);
-  const inViewPh = useInView(phRef);
-
   return (
     <div>
       <motion.p
-        ref={ref}
-        animate={inView && { translateX: 0, opacity: 1 }}
+        whileInView={{ translateX: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
         initial={{
           translateX: "-100px",
           opacity: 0,
@@ -26,8 +20,8 @@ export default function ProjectGallery({ img }: ProjectGalleryProps) {
         Design
       </motion.p>
       <motion.div
-        ref={phRef}
-        animate={inViewPh && { translateY: 0, opacity: 1 }}
+        whileInView={{ translateY: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
         initial={{
           translateY: "80px",
           opacity: 0,

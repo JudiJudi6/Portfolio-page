@@ -1,6 +1,5 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 interface SkillItemProps {
@@ -19,16 +18,14 @@ export default function SkillItem({
   last,
 }: SkillItemProps) {
   const [hover, sethover] = useState<boolean>(false);
-  const ref = useRef(null);
-  const inView = useInView(ref);
 
   return (
     <motion.div
       className="w-full flex flex-col justify-evenly items-start py-4 md:p-5"
       onHoverStart={() => sethover(true)}
       onHoverEnd={() => sethover(false)}
-      ref={ref}
-      animate={inView && { translateY: "0px", opacity: 1 }}
+      whileInView={{ translateY: "0px", opacity: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
       initial={{ translateY: "30px", opacity: 0 }}
       transition={{ ease: "easeInOut", delay: 0.5, duration: 0.4 }}
     >

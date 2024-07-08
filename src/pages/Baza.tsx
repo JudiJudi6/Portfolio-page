@@ -5,11 +5,11 @@ import Next from "../ui/projectPage/Next";
 import ProjectDescription from "../ui/projectPage/ProjectDescription";
 import ProjectGallery from "../ui/projectPage/ProjectGallery";
 
-export default function Bitchain() {
+export default function Baza() {
   return (
     <div>
       <ProjectHeader
-        title="Project Bitchain"
+        title="Kulinarna Baza"
         desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
         role="/ Front-end Developer"
         leader={true}
@@ -42,9 +42,9 @@ export default function Bitchain() {
             </a>{" "}
             using react query. The backend is built with Python Django, using
             <span className="text-blue-500"> Rest API</span>. The project is
-            built in the Students IT Club "Kod" and will be deployed on
-            their server, but at the moment after 4 months of work it is not
-            suitable for it, so there in no Live Demo :(
+            built in the Students IT Club "Kod" and will be deployed on their
+            server, but at the moment after 4 months of work it is not suitable
+            for it, so there in no Live Demo :(
           </p>
         }
         img="/bitchain/ph1.png"
@@ -72,7 +72,7 @@ export default function Bitchain() {
         img="/bitchain/ph2.png"
       />
       <ProjectGallery img="/bitchain/ph3.png" />
-      <Next link="/baza" projectName="Kulinarna Baza" />
+      <Next link="/wallet-wise" projectName="Wallet Wise" />
       <Footer />
     </div>
   );

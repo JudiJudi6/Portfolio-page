@@ -18,6 +18,7 @@ import { SiSupabase } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
+import SmallProjectItem from "./SmallProjectItem";
 
 export default function Main() {
   return (
@@ -56,19 +57,28 @@ export default function Main() {
             type="right"
             desc="Wallet simulator that allows to exchange and transfer funds between users"
           />
-          <MainItem
+        </div>
+      </section>
+      <section
+        id="small-projects"
+        className="w-full flex flex-wrap
+         justify-center items-center"
+      >
+        <SectionTitle text="Small, but also nice" />
+        <div className="flex flex-wrap justify-center items-center gap-16">
+          <SmallProjectItem
             img="/three/three.jpg"
             link="/three-animation"
             title="Interactive Robots Animation"
-            type="left"
             desc="Interactive animation in Three.js allowing users to fully control it"
+            delay={0}
           />
-          <MainItem
+          <SmallProjectItem
             img="/useless/useless.jpg"
             link="/useless-tools"
             title="Useless Tools"
-            type="right"
             desc="Project containing random tools, mainly solving problems related to tasks at the university"
+            delay={0.2}
           />
         </div>
       </section>
@@ -139,18 +149,6 @@ export default function Main() {
               color="#55ad47"
             />
             <SkillItem
-              skill="PostgreSQL"
-              libs=""
-              icon={<SiPostgresql />}
-              color="#396c94"
-            />
-            <SkillItem
-              skill="Docker"
-              libs=""
-              icon={<FaDocker />}
-              color="#0895e7"
-            />
-            <SkillItem
               skill="HTML"
               libs=""
               icon={<FaHtml5 />}
@@ -165,7 +163,7 @@ export default function Main() {
           </div>
           <SkillItem
             skill="Currently learning"
-            libs="Node.js, Express.js"
+            libs="Node.js, Express.js, Docker"
             icon={<MdOutlineMore />}
             color="#5ce708"
           />
