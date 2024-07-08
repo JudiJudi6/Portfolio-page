@@ -130,6 +130,7 @@ export default function MobileNav() {
             className={`text-3xl text-white  p-2 hover:text-red1 transition-all duration-300 ${
               open ? " duration-300 delay-[0.7s] opacity-100" : "opacity-0"
             } `}
+            aria-label="Linkedin"
           >
             <FaLinkedinIn />
           </Link>
@@ -141,6 +142,7 @@ export default function MobileNav() {
             className={`text-3xl text-white p-2 hover:text-red1 transition-all duration-300 ${
               open ? "  duration-300 delay-[0.7s] opacity-100" : " opacity-0"
             } `}
+            aria-label="Github"
           >
             <FaGithub />
           </Link>

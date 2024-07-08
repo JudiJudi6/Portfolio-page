@@ -9,6 +9,7 @@ export default function ContactButtons() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-3xl text-white  p-2 opacity-60 hover:opacity-100 transition-opacity duration-300"
+        aria-label="Linkedin"
       >
         <FaLinkedinIn />
       </Link>
@@ -17,6 +18,7 @@ export default function ContactButtons() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-3xl text-white p-2 opacity-60 hover:opacity-100 transition-opacity duration-300"
+        aria-label="Github"
       >
         <FaGithub />
       </Link>
