@@ -11,6 +11,7 @@ import ThreeAnimation from "./pages/ThreeAnimation.tsx";
 import UselessTools from "./pages/UselessTools.tsx";
 import FireDesk from "./pages/FireDesk.tsx";
 import Baza from "./pages/Baza.tsx";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const router = createBrowserRouter([
   {
@@ -32,5 +33,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <SpeedInsights />
   </React.StrictMode>
 );
