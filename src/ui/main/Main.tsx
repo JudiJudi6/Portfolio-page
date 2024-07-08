@@ -1,23 +1,13 @@
+import { BiLogoTypescript } from "react-icons/bi";
+import { DiMongodb } from "react-icons/di";
+import { FaCss3Alt, FaHtml5, FaPencilAlt, FaReact, FaSass } from "react-icons/fa";
+import { MdOutlineMore } from "react-icons/md";
+import { PiFileSqlLight } from "react-icons/pi";
+import { RiJavascriptFill } from "react-icons/ri";
+import { SiJest, SiNextdotjs, SiStyledcomponents, SiSupabase, SiTailwindcss, SiThreedotjs } from "react-icons/si";
 import SectionTitle from "../SectionTitle";
 import MainItem from "./MainItem";
 import SkillItem from "./SkillItem";
-import { FaReact } from "react-icons/fa";
-import { MdOutlineMore } from "react-icons/md";
-import { BiLogoTypescript } from "react-icons/bi";
-import { RiJavascriptFill } from "react-icons/ri";
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
-import { SiThreedotjs } from "react-icons/si";
-import { FaDocker } from "react-icons/fa";
-import { SiStyledcomponents } from "react-icons/si";
-import { FaSass } from "react-icons/fa";
-import { SiPostgresql } from "react-icons/si";
-import { PiFileSqlLight } from "react-icons/pi";
-import { SiJest } from "react-icons/si";
-import { SiSupabase } from "react-icons/si";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaPencilAlt } from "react-icons/fa";
 import SmallProjectItem from "./SmallProjectItem";
 
 export default function Main() {
