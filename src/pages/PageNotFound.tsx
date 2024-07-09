@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import ShapesMask from "../ui/header/ShapesMask";
-import Footer from "../ui/Footer";
 import { Link } from "react-router-dom";
+import ShapesMask from "../ui/header/ShapesMask";
 
 export default function PageNotFound() {
   return (
@@ -36,7 +35,6 @@ export default function PageNotFound() {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
