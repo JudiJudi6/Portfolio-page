@@ -23,7 +23,7 @@ export default function UselessTools() {
         technologies="Html, Sass, JavaScript, Django"
         link="https://github.com/skni-kod/Useless-Tools"
         bgText="Useless"
-        liveLink="https://ut.skni.edu.pl/home"
+        liveLink=""
       />
       <ProjectDescription
         type="left"
@@ -39,7 +39,7 @@ export default function UselessTools() {
       />
 
       <ProjectGallery img="/useless/ph2.png" />
-      <Next link="/bitchain" projectName="Project Bitchain" />
+      <Next link="/firedesk" projectName="FireDesk" />
       <Footer />
     </div>
   );

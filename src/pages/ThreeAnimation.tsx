@@ -45,7 +45,7 @@ export default function ThreeAnimation() {
         img="/three/ph2.png"
       />
       <ProjectGallery img="/three/ph1.png" />
-      <Next link="/useless-tools" projectName="Useless Tools" />
+      <Next link="/cnn-handwritten-digits" projectName="CNN Model" />
       <Footer />
     </div>
   );
