@@ -44,7 +44,7 @@ export default function ProjectDescription({
             transition={{ ease: "easeInOut", duration: 0.4, delay: 0.4 }}
             className={`w-full h-auto drop-shadow-[0_0_20px_rgba(0,0,0,0.5)] p-2 xm:p-8 md600:p-14 md900:p-2 md900:py-8 md900:ml-10 md900:w-[90%]`}
           >
-            <img src={img} />
+            <img src={img} alt="" />
           </motion.div>
         </>
       )}
