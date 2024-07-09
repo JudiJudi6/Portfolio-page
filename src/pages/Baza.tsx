@@ -10,13 +10,14 @@ export default function Baza() {
     <div>
       <ProjectHeader
         title="Kulinarna Baza"
-        desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
-        role="/ Front-end Developer"
-        leader={true}
-        context="Group Project at"
-        skni={true}
-        time="in progress for 8 months"
-        img="/bitchain/bitchain.jpg"
+        desc="A website with recipes where anyone logged in can add their recipes and articles"
+        role="Full-stack Developer"
+        leader={false}
+        context="Group Project"
+        skni={false}
+        time="1 month"
+        img="/baza/ph2.jpg"
+        descBg={false}
       />
       <AboutProject
         desc="Bitchain Project is a cryptocurrency exchange simulator, whose main task is to teach users how to trade, without risk, on fictitious funds, with real data. The final project will include all the functionalities of a real stock exchange, at the moment the following have been done: markets, home page, login and registration, individual currency pages, modification of user data, support for an external api for cryptocurrencies and much more."

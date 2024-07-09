@@ -1,10 +1,23 @@
 import { BiLogoTypescript } from "react-icons/bi";
 import { DiMongodb } from "react-icons/di";
-import { FaCss3Alt, FaHtml5, FaPencilAlt, FaReact, FaSass } from "react-icons/fa";
+import {
+  FaCss3Alt,
+  FaHtml5,
+  FaPencilAlt,
+  FaReact,
+  FaSass,
+} from "react-icons/fa";
 import { MdOutlineMore } from "react-icons/md";
 import { PiFileSqlLight } from "react-icons/pi";
 import { RiJavascriptFill } from "react-icons/ri";
-import { SiJest, SiNextdotjs, SiStyledcomponents, SiSupabase, SiTailwindcss, SiThreedotjs } from "react-icons/si";
+import {
+  SiJest,
+  SiNextdotjs,
+  SiStyledcomponents,
+  SiSupabase,
+  SiTailwindcss,
+  SiThreedotjs,
+} from "react-icons/si";
 import SectionTitle from "../SectionTitle";
 import MainItem from "./MainItem";
 import SkillItem from "./SkillItem";
@@ -12,13 +25,13 @@ import SmallProjectItem from "./SmallProjectItem";
 
 export default function Main() {
   return (
-    <main className="w-full px-4 xm:px-8 md600:px-14 md900:px-20 max-w-7xl flex flex-col justify-center items-center mx-auto mb-20">
+    <main className="w-full px-4 xm:px-8 md600:px-14 md900:px-20 flex flex-col justify-center items-center mx-auto mb-20 overflow-hidden">
       <section
         id="projects"
         className="w-full flex flex-col justify-center items-center"
       >
         <SectionTitle text="Best Projects" />
-        <div className="flex flex-col justify-center items-center gap-16">
+        <div className="flex flex-col justify-center items-center gap-16  w-full">
           <MainItem
             img="/firedesk/ph1.jpg"
             link="/firedesk"
@@ -34,11 +47,11 @@ export default function Main() {
             desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
           />
           <MainItem
-            img="/bitchain/bitchain.jpg"
-            link="/bitchain"
+            img="/baza/ph2.jpg"
+            link="/baza"
             title="Kulinarna Baza"
             type="left"
-            desc="Copy of a cryptocurrency exchange containing all the mechanics of a real exchange"
+            desc="A website with recipes where anyone logged in can add their recipes and articles"
           />
           <MainItem
             img="/wallet/wallet.jpg"
@@ -55,7 +68,7 @@ export default function Main() {
          justify-center items-center"
       >
         <SectionTitle text="Small, but also nice" />
-        <div className="flex flex-wrap justify-center items-center gap-16">
+        <div className="flex flex-wrap justify-center items-center gap-16 ">
           <SmallProjectItem
             img="/three/three.jpg"
             link="/three-animation"
@@ -64,11 +77,18 @@ export default function Main() {
             delay={0}
           />
           <SmallProjectItem
+            img="/cnn/ph2.jpg"
+            link="/cnn-handwritten-digits"
+            title="CNN Model"
+            desc="Project containing cnn model to recognize digits written by user"
+            delay={0.2}
+          />
+          <SmallProjectItem
             img="/useless/useless.jpg"
             link="/useless-tools"
             title="Useless Tools"
             desc="Project containing random tools, mainly solving problems related to tasks at the university"
-            delay={0.2}
+            delay={0.4}
           />
         </div>
       </section>

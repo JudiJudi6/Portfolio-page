@@ -12,6 +12,7 @@ import UselessTools from "./pages/UselessTools.tsx";
 import FireDesk from "./pages/FireDesk.tsx";
 import Baza from "./pages/Baza.tsx";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import HandwrittenDigits from "./pages/HandwrittenDigits.tsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: "wallet-wise", element: <WalletWise /> },
       { path: "three-animation", element: <ThreeAnimation /> },
       { path: "useless-tools", element: <UselessTools /> },
+      { path: "cnn-handwritten-digits", element: <HandwrittenDigits /> },
     ],
   },
 ]);
