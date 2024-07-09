@@ -8,7 +8,7 @@ export default function Loader() {
   useEffect(function () {
     setTimeout(() => {
       setTimer(false);
-    }, 2000);
+    }, 500);
   }, []);
 
   useEffect(() => {
@@ -32,13 +32,13 @@ export default function Loader() {
         },
       }}
       initial={{ opacity: 1 }}
-      transition={{ duration: 1.2, delay: 1.6 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
     >
       <motion.div
         className="h-full w-full bg-gradient-to-r from-blue3 to-blue4 flex justify-center items-center"
         animate={{ translateX: "100%" }}
         initial={{ translateX: 0 }}
-        transition={{ duration: 0.4, delay: 1.2 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
       >
         <Spinner />
       </motion.div>

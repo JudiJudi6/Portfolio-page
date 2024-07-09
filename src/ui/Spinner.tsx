@@ -5,6 +5,7 @@ export default function Spinner() {
     <div className="flex flex-col gap-1">
       <motion.div
         className="w-[150px] h-6 bg-white origin-left"
+        initial={{ scaleX: 0 }}
         animate={{ scaleX: [0, 1] }}
         transition={{
           ease: "linear",
@@ -15,6 +16,7 @@ export default function Spinner() {
       ></motion.div>
       <motion.div
         className="w-[150px] h-6 bg-white origin-left"
+        initial={{ scaleX: 0 }}
         animate={{ scaleX: [0, 1] }}
         transition={{
           ease: "linear",
@@ -26,6 +28,7 @@ export default function Spinner() {
       ></motion.div>
       <motion.div
         className="w-[150px] h-6 bg-white origin-left"
+        initial={{ scaleX: 0 }}
         animate={{ scaleX: [0, 1] }}
         transition={{
           ease: "linear",

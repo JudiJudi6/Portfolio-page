@@ -8,6 +8,7 @@ import ContactButtons from "./ContactButtons";
 import Image from "./Image";
 import Navigation from "./Navigation";
 import ShapesMask from "./ShapesMask";
+import Loader from "./Loader";
 
 export default function Header() {
   return (
@@ -51,6 +52,7 @@ export default function Header() {
         </span>
       </motion.button>
       <ContactButtons />
+      <Loader/>
     </div>
   );
 }
