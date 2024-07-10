@@ -14,7 +14,7 @@ export default function FireDesk() {
         desc="Huge project created in cooperation with Xebia Company and Rzeszów University of Technology, based on the creation of MVP application for office management and workstation bookings."
         role="/ Full-stack Developer"
         leader={true}
-        context="Group Project"
+        context="Group University Project"
         skni={false}
         time="MVP done in 5 months"
         img="/firedesk/ph1.jpg"
