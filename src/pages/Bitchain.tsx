@@ -15,7 +15,7 @@ export default function Bitchain() {
         leader={true}
         context="Group Project at"
         skni={true}
-        time="in progress for 8 months"
+        time="8 months (suspended)"
         img="/bitchain/bitchain.jpg"
       />
       <AboutProject

@@ -33,6 +33,13 @@ export default function Main() {
         <SectionTitle text="Best Projects" />
         <div className="flex flex-col justify-center items-center gap-16  w-full">
           <MainItem
+            img="/readit/ph1.jpg"
+            link="/readIt"
+            title="ReadIt"
+            type="right"
+            desc="A newly created project that takes part in the “VIA Express do sukcesu” contest for the best startup idea. The project is a site for sharing knowledge with others by creating your own thematic pages"
+          />
+          <MainItem
             img="/firedesk/ph1.jpg"
             link="/firedesk"
             title="FireDesk"
@@ -103,7 +110,7 @@ export default function Main() {
           />
           <SkillItem
             skill="React"
-            libs="React Query, React Redux, React Router, React Testing Library, Framer Motion, React Three Fiber, ReCharts, React Hook Form, Material UI, HighCharts.js, and other libraries. HOC pattern and Compound Components Pattern"
+            libs="React Query, Redux/Redux Toolkit with Query, React Router, React Testing Library, Framer Motion, React Three Fiber, Theatre.js, ReCharts, React Hook Form, Material UI, Shadcn, HighCharts.js, and other libraries. HOC pattern and Compound Components Pattern"
             icon={<FaReact />}
             color="#66dbfb"
           />

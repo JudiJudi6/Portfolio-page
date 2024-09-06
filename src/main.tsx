@@ -13,6 +13,7 @@ import FireDesk from "./pages/FireDesk.tsx";
 import Baza from "./pages/Baza.tsx";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import HandwrittenDigits from "./pages/HandwrittenDigits.tsx";
+import Readit from "./pages/Readit.tsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Homepage /> },
       { path: "bitchain", element: <Bitchain /> },
+      { path: "readIt", element: <Readit /> },
       { path: "firedesk", element: <FireDesk /> },
       { path: "baza", element: <Baza /> },
       { path: "wallet-wise", element: <WalletWise /> },

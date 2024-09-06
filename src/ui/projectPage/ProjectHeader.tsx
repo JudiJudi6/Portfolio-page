@@ -52,11 +52,12 @@ export default function ProjectHeader({
             </motion.h3>
           </div>
         </div>
-        <div className="absolute bottom-5 left-0 w-full p-6 flex flex-col md600:flex-row justify-between items-center gap-4 text-white text-center uppercase font-semibold text-xs md800:text-sm z-[30]">
+        <div className="absolute bottom-5 left-0 w-full p-6 grid grid-cols-1 place-items-center md600:grid-cols-3 gap-4 text-white text-center uppercase font-semibold text-xs md800:text-sm z-[30]">
           <motion.div
             animate={{ translateX: 0, opacity: 1 }}
             initial={{ translateX: "-50px", opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
+            className="place-self-start"
           >
             <p>
               <span className="text-blue-500">Role</span>{" "}
@@ -89,6 +90,7 @@ export default function ProjectHeader({
             animate={{ translateX: 0, opacity: 1 }}
             initial={{ translateX: "50px", opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
+            className="place-self-end"
           >
             <p>
               {" "}

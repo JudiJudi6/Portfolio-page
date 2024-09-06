@@ -103,7 +103,7 @@ export default function About({ onCloseModal }: AboutProps) {
               <br />I am <span className="text-red1">
                 currently looking
               </span>{" "}
-              for my first job.
+              for new job.
             </p>
           </div>
         </div>

@@ -39,7 +39,7 @@ export default function UselessTools() {
       />
 
       <ProjectGallery img="/useless/ph2.png" />
-      <Next link="/firedesk" projectName="FireDesk" />
+      <Next link="/readIt" projectName="ReadIt" />
       <Footer />
     </div>
   );
