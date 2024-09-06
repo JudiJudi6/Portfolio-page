@@ -1,10 +1,9 @@
-import ProjectHeader from "../ui/projectPage/ProjectHeader";
-import AboutProject from "../ui/projectPage/AboutProject";
 import Footer from "../ui/Footer";
+import AboutProject from "../ui/projectPage/AboutProject";
 import Next from "../ui/projectPage/Next";
 import ProjectDescription from "../ui/projectPage/ProjectDescription";
 import ProjectGallery from "../ui/projectPage/ProjectGallery";
-import VideoSection from "../ui/projectPage/VideoSection";
+import ProjectHeader from "../ui/projectPage/ProjectHeader";
 
 export default function Readit() {
   return (
