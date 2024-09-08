@@ -14,6 +14,7 @@ import Baza from "./pages/Baza.tsx";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import HandwrittenDigits from "./pages/HandwrittenDigits.tsx";
 import Readit from "./pages/Readit.tsx";
+import { Analytics } from "@vercel/analytics/react";
 
 const router = createBrowserRouter([
   {
@@ -38,5 +39,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
     <SpeedInsights />
+    <Analytics />
   </React.StrictMode>
 );
