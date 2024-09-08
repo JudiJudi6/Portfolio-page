@@ -57,7 +57,7 @@ export default function ProjectHeader({
             animate={{ translateX: 0, opacity: 1 }}
             initial={{ translateX: "-50px", opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
-            className="place-self-start"
+            className="md600:place-self-start"
           >
             <p>
               <span className="text-blue-500">Role</span>{" "}
@@ -90,7 +90,7 @@ export default function ProjectHeader({
             animate={{ translateX: 0, opacity: 1 }}
             initial={{ translateX: "50px", opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
-            className="place-self-end"
+            className="md600:place-self-end"
           >
             <p>
               {" "}
