@@ -13,6 +13,7 @@ import { RiJavascriptFill } from "react-icons/ri";
 import {
   SiJest,
   SiNextdotjs,
+  SiPrismic,
   SiStyledcomponents,
   SiSupabase,
   SiTailwindcss,
@@ -126,6 +127,12 @@ export default function Main() {
               libs="OOP, Async/await, Promises and more"
               icon={<RiJavascriptFill />}
               color="#efd81d"
+            />
+            <SkillItem
+              skill="Prismic CMS"
+              libs=""
+              icon={<SiPrismic />}
+              color="#d77ee9"
             />
             <SkillItem
               skill="Tailwind"
